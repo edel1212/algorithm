@@ -1,4 +1,4 @@
-package charAndString;
+package stringQuize;
 
 import java.io.*;
 
