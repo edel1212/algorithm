@@ -19,7 +19,8 @@ public class Q11720 {
 
             int result = 0;
             for(int i = 0 ; i < N ; i++){
-                //☠️ result += Integer.valueOf(param.charAt(i)); << - 해당 방식은 아스키 코드가 나옴
+                // ☠️ result += Integer.valueOf(param.charAt(i)); << - 해당 방식은 아스키 코드가 나옴
+                // 👍 result += param.charAt(i) - '0';  << - 해당 방법을 사용할 수 도 있다. 아스키코드값이 아닌 그대로 사용할수 있음
                 result += Character.getNumericValue(param.charAt(i));
             }//for
 
