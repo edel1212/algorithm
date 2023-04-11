@@ -4,4 +4,6 @@
   - 1차원 배열
     - 10811 - 바구니 뒤집기 :: [이동](https://github.com/edel1212/algorithm/blob/main/src/oneDimensArr/Q10811.java) 
   - 문자열
-    - 11654 - 아스키코드 :: [이동](https://github.com/edel1212/algorithm/blob/main/src/stringQuize/Q11654.java)
+    - 11654 - 아스키코드 :: [이동](https://github.com/edel1212/algorithm/blob/main/src/stringQuize/Q11654.java) 
+    - 11720 - 숫자의 합 :: [이동](https://github.com/edel1212/algorithm/blob/main/src/stringQuize/Q11720.java)
+    - 1152  - 단어의 개수 :: [이동](https://github.com/edel1212/algorithm/blob/main/src/stringQuize/Q1152.java)
