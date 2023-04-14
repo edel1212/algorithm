@@ -12,3 +12,4 @@
       - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q10812_Fail.java) 
       - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q10812_ReTry.java)
       - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q10812_Succ.java)
+    - 10988 - 팰린드롬인지 확인하기 (틀리지 않았으나 리터럴 풀에 대해 배움) :: [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q10988.java)
