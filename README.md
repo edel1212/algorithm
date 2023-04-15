@@ -18,5 +18,5 @@
       - 리팩토링   :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q1157_efficient.java)
     - 2941 - 크로아티아 알파벳 ☠️(결국 해석 보고 해결 ..)
       - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q2941_Fail.java)
-      - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q2941_ReTry.java)
+      - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q2941_ReTryy.java)
       - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q2941_Succ.java)
