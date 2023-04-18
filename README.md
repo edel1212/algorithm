@@ -20,3 +20,6 @@
       - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q2941_Fail.java)
       - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q2941_ReTryy.java)
       - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q2941_Succ.java)
+    - 1316 - 그룹 단어 체커 ✅(틀리지 않았으나 효율적인 코드로 개선 방법 찾아봄)
+      - 내가한 풀이 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q1316.java)
+      - 리팩토링   :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q1316_efficient.java) 
