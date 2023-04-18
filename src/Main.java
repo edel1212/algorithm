@@ -4,8 +4,9 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        String word = "nljj";
-        System.out.println(word.substring(0 , 1)); //n
-        System.out.println(word.substring(0 , 2)); //nl
+        String aa = "aba";
+
+        System.out.println(aa.substring(0, aa.length()-1));
     }
 }
+
