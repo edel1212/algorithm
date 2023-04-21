@@ -23,3 +23,8 @@
     - 1316 - 그룹 단어 체커 ✅(틀리지 않았으나 효율적인 코드로 개선 방법 찾아봄)
       - 내가한 풀이 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q1316.java)
       - 리팩토링   :  [이동](https://github.com/edel1212/algorithm/blob/main/src/intensiveStep1/Q1316_efficient.java) 
+  - 👉 2차원 배열
+    - 17098 - 세로읽기 ☠️(결국 해석 보고 해결 ..) 
+        - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/twoDimensArr/Q10798_Fail.java)
+        - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/twoDimensArr/Q10798_ReTryy.java)
+        - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/twoDimensArr/Q10798_Succ.java)
