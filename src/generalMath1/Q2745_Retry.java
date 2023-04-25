@@ -35,8 +35,16 @@ public class Q2745_Retry {
                 } else {
                     tmp = tmpChar - '0';
                 }
+                result += (long) Math.pow(B, N.length()-1-c) * tmp;
 
-                result = result * B +tmp;
+                /**
+                 * 당연히 아래 코드가 안되는 이유는
+                 * 위에서 구하는 tmpChar는 index가 0부터 시작이니 .. 당연하다 ..
+                 * ex) 1010 -- >  tmpchar = 1, 0, 1, 0
+                 *
+                 * 이니 아래의 제곱방법 또한 역순으로 해줘야지 ..
+                 * */
+                //result += (long) Math.pow(B, c) * tmp;  // 👉 당연 .. tmpchar가 인덱스 순이니 ..
 
             }//for
 

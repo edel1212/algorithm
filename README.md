@@ -31,3 +31,8 @@
     - 2563 - 색종이 (힌트를 보고 해결)
       - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/twoDimensArr/Q2563_Fail.java)
       - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/twoDimensArr/Q2563_Succ.java)
+  - 👉  일반수학1
+    - 2754 - 진법변환 ☠️(처음엔 문제를 잘못 이해함 && 이해 후 풀땐 문자 순서와 제곱 순서를 안맞춰줌 ..) 
+      - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2745_Fail.java)
+      - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2745_Retry.java)
+      - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2745_Succ.java)- 
