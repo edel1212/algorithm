@@ -35,4 +35,8 @@
     - 2754 - 진법변환 ☠️(처음엔 문제를 잘못 이해함 && 이해 후 풀땐 문자 순서와 제곱 순서를 안맞춰줌 ..) 
       - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2745_Fail.java)
       - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2745_Retry.java)
-      - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2745_Succ.java)- 
+      - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2745_Succ.java)
+    - 1193 - 분수찾기 ☠️( 실패.. )
+    - - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q1193_Fail.java)
+    - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q1193_Retry.java)
+    - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q1193_Succ.java)
