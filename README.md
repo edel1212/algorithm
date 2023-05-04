@@ -44,3 +44,4 @@
       - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2869_Fail.java)
       - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2869_Retry.java)
       - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2869_Succ.java)  
+    - 10757 - 큰수 A+B ( 내가 정한 풀이시간 초과 .. )
