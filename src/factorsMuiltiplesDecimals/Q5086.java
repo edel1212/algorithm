@@ -34,19 +34,29 @@ public class Q5086 {
                 // 0 0 일 경우 종료
                 if(x == 0 && y == 0) break;
 
-                if(x < y){
-                    if(y%x == 0){
-                        bw.write("factor");
-                    }  else {
-                        bw.write("neither");
-                    }
+//                if(x < y){
+//                    if(y%x == 0){
+//                        bw.write("factor");
+//                    }  else {
+//                        bw.write("neither");
+//                    }
+//                } else{
+//                    if(x%y == 0){
+//                        bw.write("multiple");
+//                    }  else {
+//                        bw.write("neither");
+//                    }
+//                }
+
+                // 개선
+                if(x % y == 0){
+                    bw.write("factor");
+                } else if(y % x == 0){
+                    bw.write("multiple");
                 } else{
-                    if(x%y == 0){
-                        bw.write("multiple");
-                    }  else {
-                        bw.write("neither");
-                    }
-                }
+                    bw.write("neither");
+                }//if - else
+
                 bw.newLine();
             }//while
             bw.flush();
