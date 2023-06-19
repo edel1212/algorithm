@@ -1,5 +1,12 @@
 package bruteForce;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
 public class Q2798 {
     /**
      * 카지노에서 제일 인기 있는 게임 블랙잭의 규칙은 상당히 쉽다. 카드의 합이 21을 넘지 않는 한도 내에서,
@@ -15,6 +22,35 @@ public class Q2798 {
      *
      * N장의 카드에 써져 있는 숫자가 주어졌을 때, M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 구해 출력하시오.
      * **/
+    public static void main(String[] args) {
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))){
+
+            StringTokenizer strToken = new StringTokenizer(br.readLine()," ");
+
+            // 카드의 개수
+            int N = Integer.valueOf(strToken.nextToken());
+            // 맞추거나 가까워야 하는 수
+            int M = Integer.valueOf(strToken.nextToken());
+
+            int[] tmp = new int[N];
+
+            strToken = new StringTokenizer(br.readLine()," ");
+            // 카드의 수만큼 Loop
+            for(int i = 0; i < N ; i ++){
+                tmp[i] = Integer.valueOf(strToken.nextToken());
+            }//for
 
 
+            int tmpCnt = 0;
+            // 순회며 덧셈
+            for(int item : tmp){
+                tmpCnt += item;
+            }//for
+
+
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
 }
