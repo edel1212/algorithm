@@ -41,16 +41,20 @@ public class Q2798 {
                 tmp[i] = Integer.valueOf(strToken.nextToken());
             }//for
 
-
-            int tmpCnt = 0;
-            // 순회며 덧셈
-            for(int item : tmp){
-                tmpCnt += item;
-            }//for
-
-
         } catch(Exception ex){
             ex.printStackTrace();
         }
     }
+
+    static int search(int[] arr, int N, int M){
+        int result = 0;
+
+        // 총 3개의 카드를 고름 - 첫번째 카드만 사용하여 순회하기에 "N - 2"
+        for(int i = 0 ; i < N-2 ; i++){
+
+        }//for
+
+        return result;
+    }
+
 }
