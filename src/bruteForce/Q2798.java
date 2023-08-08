@@ -41,6 +41,8 @@ public class Q2798 {
                 tmp[i] = Integer.valueOf(strToken.nextToken());
             }//for
 
+            bw.write(String.valueOf(search(tmp, N,M)));
+            bw.flush();
         } catch(Exception ex){
             ex.printStackTrace();
         }
@@ -49,8 +51,68 @@ public class Q2798 {
     static int search(int[] arr, int N, int M){
         int result = 0;
 
+        /**
+         * 시작을 N-2를 해주는 이유는 카드를 총 3장을 뽑기 때문이다.
+         *  - 그렇다면 5장일 경우에는 ? -4로 시작한다
+         *  👉 그 이유?
+         *  예를 들어
+         *  5장의 카드를 주고 3장을 뽑는다 치면
+         *  5 6 7 8 9
+         *
+         *  순회 예시
+         *
+         * 첫번쨰 For : 5
+         * 두번쨰 For :: 6
+         * 세번쨰 For ::: 7
+         * 세번쨰 For ::: 8
+         * 세번쨰 For ::: 9
+         * 두번쨰 For :: 7
+         * 세번쨰 For ::: 8
+         * 세번쨰 For ::: 9
+         * 두번쨰 For :: 8
+         * 세번쨰 For ::: 9
+         *
+         * 첫번쨰 For : 6
+         * 두번쨰 For :: 7
+         * 세번쨰 For ::: 8
+         * 세번쨰 For ::: 9
+         * 두번쨰 For :: 8
+         * 세번쨰 For ::: 9
+         *
+         * 첫번쨰 For : 7
+         * 두번쨰 For :: 8
+         * 세번쨰 For ::: 9
+         * */
         // 총 3개의 카드를 고름 - 첫번째 카드만 사용하여 순회하기에 "N - 2"
         for(int i = 0 ; i < N-2 ; i++){
+            System.out.print("첫번쨰 For : ");
+            System.out.print(arr[i]);
+
+            System.out.println("");
+
+            // 두번째 카드는  첫 번째 카드 다음부터 "N - 1" [ 상위 For문의 + 1 로 시작 ]
+            for (int j = i + 1; j < N - 1; j++) {
+                System.out.print("두번쨰 For :: ");
+                System.out.print(arr[j] );
+
+                System.out.println("");
+
+                // 세 번째 카드는 두 번째 카드 다음부터 N 까지 순회 [ 상위 For문의 + 1 로 시작 ]
+                for (int k = j + 1; k < N; k++) {
+                    System.out.print("세번쨰 For ::: ");
+                    System.out.print(arr[k]);
+
+                    System.out.println("");
+
+                    // 3개의 카드를 덧셈한 수
+                    int tmp = arr[i] + arr[j] + arr[k];
+
+                    // M과 같아면 정답
+                    if(tmp == M) return tmp;
+
+                }//for
+
+            }//for
 
         }//for
 
