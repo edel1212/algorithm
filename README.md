@@ -50,3 +50,6 @@
 - 👉  기하: 직사각형과 삼각형
   - 3009 - 네번쨰점 ( 풀었으나 시간이 너무 오래걸림 .. 좀더 넓게 생각하면 쉽게 풀수 있는 문제 )
     - 나의 풀이 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/squareAndTriangle/Q3009.java)
+- 👉  부루트 포스
+- 2798 - 블랙잭 ☠️( 실패.. )
+  - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q2798.java)
