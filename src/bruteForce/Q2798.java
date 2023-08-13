@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Q2798 {
@@ -85,30 +84,16 @@ public class Q2798 {
          * */
         // 총 3개의 카드를 고름 - 첫번째 카드만 사용하여 순회하기에 "N - 2"
         for(int i = 0 ; i < N-2 ; i++){
-            System.out.print("첫번쨰 For : ");
-            System.out.print(arr[i]);
-
-            System.out.println("");
 
             // 두번째 카드는  첫 번째 카드 다음부터 "N - 1" [ 상위 For문의 + 1 로 시작 ]
             for (int j = i + 1; j < N - 1; j++) {
-                System.out.print("두번쨰 For :: ");
-                System.out.print(arr[j] );
-
-                System.out.println("");
-
                 // 세 번째 카드는 두 번째 카드 다음부터 N 까지 순회 [ 상위 For문의 + 1 로 시작 ]
                 for (int k = j + 1; k < N; k++) {
-                    System.out.print("세번쨰 For ::: ");
-                    System.out.print(arr[k]);
-
-                    System.out.println("");
-
                     // 3개의 카드를 덧셈한 수
                     int tmp = arr[i] + arr[j] + arr[k];
 
-                    // M과 같아면 정답
-                    if(tmp == M) return tmp;
+                    // M과 같거나 가장 가까운 수
+                    if(tmp <= M && tmp > result) result = tmp;
 
                 }//for
 
