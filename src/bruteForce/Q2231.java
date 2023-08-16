@@ -17,6 +17,11 @@ public class Q2231 {
     public static void main(String[] args) {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))){
+            // 분해합은 N과 N을 이루는 각 자리수의 합을 의미한다. :: 245 - > 256(=245+2+4+5)
+
+            // 216   --> 198 + 18
+            // 215   --> 199 +
+            // TODO ::  기준을 잡고 loop를 돌면서 가장 가까운 수로 시작하자 기준은  가장 작은 N이기에 0부터 시작하는걸로한다.
 
        } catch (Exception ex){
            ex.printStackTrace();
