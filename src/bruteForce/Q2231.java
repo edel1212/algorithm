@@ -21,13 +21,14 @@ public class Q2231 {
 
             int N = Integer.valueOf(br.read());
 
-            // 216   --> 198 + 18
-            // 215   --> 199 +
-            // TODO ::  기준을 잡고 loop를 돌면서 가장 가까운 수로 시작하자 기준은  가장 작은 N이기에 0부터 시작하는걸로한다.
+            // 198 = 198 + 9 + 8 = 216
+            // 216 = 216 + 2 + 1 + 6
 
             for(int i = 0 ; i < N; i ++ ){
 
-            }
+
+
+            }//for
 
        } catch (Exception ex){
            ex.printStackTrace();
