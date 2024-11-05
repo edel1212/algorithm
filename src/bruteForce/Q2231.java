@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
-
 public class Q2231 {
     /**
      * 어떤 자연수 N이 있을 때, 그 자연수 N의 분해합은 N과 N을 이루는 각 자리수의 합을 의미한다.
@@ -22,7 +21,8 @@ public class Q2231 {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))){
 
             int M = Integer.parseInt(br.readLine());
-            for(int i = 1 ; i <= M ; i++){
+            int result = 0;
+            for(int i =  1; i <= M ; i++){
                 String numStr = String.valueOf(i);
                 int length = numStr.length();
                 int[] digits = new int[length];
@@ -30,17 +30,18 @@ public class Q2231 {
                 for (int o = 0; o < length; o++) {
                     digits[o] =Character.getNumericValue(numStr.charAt(o));
                 }// for
-               int arrSum =  Arrays.stream(digits).reduce(Integer::sum).getAsInt();
-                int result = i + arrSum;
-                if(M == result) {
-                    bw.write(String.valueOf(i));
-                    bw.flush();
+                int arrSum =  Arrays.stream(digits).reduce(Integer::sum).getAsInt();
+                int sumArg = i + arrSum;
+                if(M == sumArg) {
+                    result = i;
                     break;
                 }// if
             } // for
-
-       } catch (Exception ex){
-           ex.printStackTrace();
-       }
+            bw.write(String.valueOf(result));
+            bw.flush();
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 }
+
