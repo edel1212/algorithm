@@ -14,7 +14,6 @@ public class Q2231 {
      *
      * 자연수 N이 주어졌을 때, N의 가장 작은 생성자를 구해내는 프로그램을 작성하시오.
      *
-     * Input : 216   // Out Put : 198
      * */
     public static void main(String[] args) {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
