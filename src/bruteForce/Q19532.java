@@ -8,7 +8,7 @@ public class Q19532 {
      * ax + by = c
      * dx + ey =f
      *
-     * 빈 칸에 수들을 입력하는 식이다. 각 칸에는 -999$ 이상 999$ 이하의 정수만 입력할 수 있다.
+     * 빈 칸에 수들을 입력하는 식이다. 각 칸에는 -999 이상 999 이하의 정수만 입력할 수 있다.
      *
      *
      * ℹ️ 입력
@@ -23,7 +23,27 @@ public class Q19532 {
     public static void main(String[] args) {
         try( BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));){
-            System.out.println(br.readLine());
+            String[] arr = br.readLine().split(" ");
+            int a = Integer.parseInt(arr[0]);
+            int b = Integer.parseInt(arr[1]);
+            int c = Integer.parseInt(arr[2]);
+            int d = Integer.parseInt(arr[3]);
+            int e = Integer.parseInt(arr[4]);
+            int f = Integer.parseInt(arr[5]);
+
+            // -999 ~ 999 까지의 x 값
+            for( int x = -999 ; x <= 999 ; x++ ){
+                // -999 ~ 999 까지의 y 값
+                for( int y = -999 ; y <= 999 ; y++ ){
+                    // 값 검증
+                    if( a*x+b*y == c && d*x+e*y == f ){
+                        bw.write(x + " " + y);
+                        bw.flush();
+                        break;
+                    }// if
+                } // for
+            } // for
+
         }catch (IOException e){
             e.printStackTrace();
         }
