@@ -32,7 +32,7 @@
     - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/twoDimensArr/Q2563_Fail.java)
     - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/twoDimensArr/Q2563_Succ.java)
 - 👉  일반수학1
-  - 2754 - 진법변환 ☠️(처음엔 문제를 잘못 이해함 && 이해 후 풀땐 문자 순서와 제곱 순서를 안맞춰줌 ..) 
+  - 2754 - 진법변환 ☠️(처음엔 문제를 잘못 이해함 && 이해 후 풀땐 문자 순서와 제곱 순서를 안 맞춰줌 ..) 
     - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2745_Fail.java)
     - 재도전 성공 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2745_Retry.java)
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q2745_Succ.java)
@@ -48,10 +48,12 @@
   - 내가한 오답 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q10757_Fail.java) 
   - 해석 + 재도전 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/generalMath1/Q10757_Succ.java)
 - 👉  기하: 직사각형과 삼각형
-  - 3009 - 네번쨰점 ( 풀었으나 시간이 너무 오래걸림 .. 좀더 넓게 생각하면 쉽게 풀수 있는 문제 )
+  - 3009 - 네번째점 ( 풀었으나 시간이 너무 오래걸림 .. 좀더 넓게 생각하면 쉽게 풀수 있는 문제 )
     - 나의 풀이 :  [이동](https://github.com/edel1212/algorithm/blob/main/src/squareAndTriangle/Q3009.java)
 - 👉  부루트 포스
   - 2798 - 블랙잭 ☠️( 실패.. )
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q2798.java)
   - 2231 - 분해합  
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q2231.java)
+  - 19532 - 수학은 비대면강의입니다 ☠️(결국 해석 보고 해결 - 좀 더 쉽게 생각하는 자세 필요)
+    - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q19532.java)
