@@ -38,29 +38,25 @@ public class Q1018 {
             int N = Integer.parseInt(stringTokenizer.nextToken());
             int M = Integer.parseInt(stringTokenizer.nextToken());
             
-            // 8 * 8 체스판들의 다시 그려야하는 카운트 확인
-            List<Integer> reDrawCntArr = new ArrayList<>();
-            // 세로 개수 만큼 Read
-            for(int colum = 0 ; colum < N ; colum++ ){
-                stringTokenizer = new StringTokenizer(br.readLine());
-                System.out.println(stringTokenizer.nextToken());
-                
-                // TODO 여기서 모든 체스판 보드를 받아 배열에 저장 후 행마다 8 8 체크
-                
-                // 가로 흰 검 확인 - 8개까지 무조건 확인이야
-                for(int row = 0 ; row < M ; row++ ){
-                }//for
-            }// for
+            
+            // TODO (힌트) 8 ,8 을 그리는 게 힌트다. 최대 받은 개수에서 -7을 하면 할 수있는 범위가 나오는것이다. 
 
-            // 가로
-//            for(int row = 0 ; row < M ; row++ ){
-//                // 새로
-//                for(int colum = 0 ; colum < N ; colum++ ){
-//
-//                }// for
+//            // 8 * 8 체스판들의 다시 그려야하는 카운트 확인
+//            List<Integer> reDrawCntArr = new ArrayList<>();
+//            // 보드를 저장
+//            List<String> board = new ArrayList<>();
+//            // 세로 개수 만큼 Read
+//            for(int colum = 0 ; colum < N ; colum++ ){
+//                stringTokenizer = new StringTokenizer(br.readLine());
+//                board.add(stringTokenizer.nextToken());
 //            }// for
-
-
+//
+//            for(String s : board){
+//                // 가로 흰 검 확인 - 8개까지 무조건 확인이야
+//                for(int row = 0 ; row < M ; row++ ){
+//
+//                }//for
+//            }// for
 
 
 
