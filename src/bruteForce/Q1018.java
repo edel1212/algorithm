@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class Q1018 {
     /**
@@ -29,6 +30,33 @@ public class Q1018 {
     public static void main(String[] args) {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))){
+            
+            // N 과 M 의 값을 받음
+            StringTokenizer stringTokenizer = new StringTokenizer(br.readLine());
+            int N = Integer.parseInt(stringTokenizer.nextToken());
+            int M = Integer.parseInt(stringTokenizer.nextToken());
+
+            // 새로 개수 만큼 Read
+            for(int colum = 0 ; colum < N ; colum++ ){
+                stringTokenizer = new StringTokenizer(br.readLine());
+                System.out.println(stringTokenizer.nextToken());
+                // 가로 흰 검 확인 - 8개까지 무조건 확인이야
+                for(int row = 0 ; row < M ; row++ ){
+                    boolean flag = true;
+                }//for
+            }// for
+
+            // 가로
+//            for(int row = 0 ; row < M ; row++ ){
+//                // 새로
+//                for(int colum = 0 ; colum < N ; colum++ ){
+//
+//                }// for
+//            }// for
+
+
+
+
 
         }catch (Exception e){
             e.printStackTrace();
