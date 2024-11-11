@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -29,36 +30,38 @@ public class Q1018 {
      *  👍 출력
      *      첫째 줄에 지민이가 다시 칠해야 하는 정사각형 개수의 최솟값을 출력한다.
      * */
+
+    // 8 * 8 - 전부 흰 or 전부 검 일 재 색칠 경우
+    public static int MAX_DRAW_CNT = 64;
+
     public static void main(String[] args) {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))){
-            
+
             // N 과 M 의 값을 받음
-            StringTokenizer stringTokenizer = new StringTokenizer(br.readLine());
+            StringTokenizer stringTokenizer = new StringTokenizer(br.readLine()," ");
             int N = Integer.parseInt(stringTokenizer.nextToken());
+            // 가로
             int M = Integer.parseInt(stringTokenizer.nextToken());
             
-            
-            // TODO (힌트) 8 ,8 을 그리는 게 힌트다. 최대 받은 개수에서 -7을 하면 할 수있는 범위가 나오는것이다. 
+            // 보드 생성
+            String[][] board = new String[M][N];
+            for(int row = 0 ; row < M ; row++){
+                String input = br.readLine();
+                for(int col = 0 ; col < N ; col++){
+                    board[row][col] = String.valueOf(input.charAt(col));
+                }// for
+            }// for
 
-//            // 8 * 8 체스판들의 다시 그려야하는 카운트 확인
-//            List<Integer> reDrawCntArr = new ArrayList<>();
-//            // 보드를 저장
-//            List<String> board = new ArrayList<>();
-//            // 세로 개수 만큼 Read
-//            for(int colum = 0 ; colum < N ; colum++ ){
-//                stringTokenizer = new StringTokenizer(br.readLine());
-//                board.add(stringTokenizer.nextToken());
-//            }// for
-//
-//            for(String s : board){
-//                // 가로 흰 검 확인 - 8개까지 무조건 확인이야
-//                for(int row = 0 ; row < M ; row++ ){
-//
-//                }//for
-//            }// for
+            // 8 * 8 경우의 수 비교 ( 받아온 수의 7을 빼면 최대 횟수 )
+            int N_cases_row = N - 7;
+            int M_cases_col = M - 7;
 
-
+            // 모든 경우의 수 loop
+            for (int i = 0; i < N_cases_row; i++) {
+                for (int j = 0; j < M_cases_col; j++) {
+                } // for
+            }// for
 
         }catch (Exception e){
             e.printStackTrace();
