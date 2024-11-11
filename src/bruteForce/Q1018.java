@@ -40,31 +40,67 @@ public class Q1018 {
 
             // N 과 M 의 값을 받음
             StringTokenizer stringTokenizer = new StringTokenizer(br.readLine()," ");
-            int N = Integer.parseInt(stringTokenizer.nextToken());
-            // 가로
-            int M = Integer.parseInt(stringTokenizer.nextToken());
+            int N = Integer.parseInt(stringTokenizer.nextToken()); // 세로
+            int M = Integer.parseInt(stringTokenizer.nextToken()); // 가로
             
             // 보드 생성
-            String[][] board = new String[M][N];
-            for(int row = 0 ; row < M ; row++){
-                String input = br.readLine();
-                for(int col = 0 ; col < N ; col++){
-                    board[row][col] = String.valueOf(input.charAt(col));
-                }// for
-            }// for
+            String[] chessboard = new String[N];
+            for(int i = 0; i < N; i++) chessboard[i] = br.readLine();
+            br.close();
 
-            // 8 * 8 경우의 수 비교 ( 받아온 수의 7을 빼면 최대 횟수 )
+            // 8 * 8 경우의 수 비교 ( 받아온 수의 7을 빼면 최대 보드 자를 수 있는 칸의 횟수 )
             int N_cases_row = N - 7;
             int M_cases_col = M - 7;
 
-            // 모든 경우의 수 loop
-            for (int i = 0; i < N_cases_row; i++) {
-                for (int j = 0; j < M_cases_col; j++) {
-                } // for
-            }// for
+            // 가장 낮은 값을 비교하기 위한 초기값 지정
+            int drawCount = Integer.MAX_VALUE;
 
+            // 가능한 경우의 수를 Loop
+            for(int row = 0; row < N_cases_row ; row++){
+
+                // 한칸씩 오른쪽으로 가면서 비교 시작 (👍 포인트는 8칸 씩 움직인가 생각하는 것임)
+                for(int col = 0; col < M_cases_col ; col++){
+                    int resultCount = Q1018.getMinCost(row, col, chessboard);
+                    if(drawCount > resultCount) drawCount = resultCount;
+                }// for
+
+            } // for
+
+            bw.write(drawCount + "\n");
+            bw.flush();
+            bw.close();
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public static int getMinCost(int startRow, int startCol, String[] chessboard) {
+        // 각각의 기본 보드 - 흰색 , 검은색  :: 각각 겹쳐서 보임
+        String[] board = {"WBWBWBWB", "BWBWBWBW"};
+
+        // 화이트를 기준으로 카운트
+        int whiteChessBoardDrawCnt = 0;
+
+        // 판을 한칸 씩 옮기며 Loop
+        for(int i = 0; i < 8; i++){
+            // 시작값을 더한 한칸임
+            int row = startRow + i;
+            // 세로 Loop 체크
+            for(int j = 0; j < 8; j++){
+                int col = startCol + j;
+
+                // 정답 보드 - 흰색 체스판을 기준으로 하기에 %2로 시작
+                char baseBoardPiece     = board[row % 2].charAt(j);
+                // 매개변수로 받아온 보드
+                char boardPiece         = chessboard[row].charAt(col);
+                // 정답 보드의 피스와 같지 않다면 색칠 카운드 ++
+                if( boardPiece != baseBoardPiece) whiteChessBoardDrawCnt++;
+            }//  for
+
+        }// for
+        // 최소 값을 비교 해당 판의 흰색과 검은색 중 최소 확인
+        // ℹ️ 흰색 or 검은색 의 색칠 수를 최대 8 * 8의 값인 64를 빼면 반대 버전의 색칠 수가 나옴
+        return Math.min(whiteChessBoardDrawCnt, MAX_DRAW_CNT - whiteChessBoardDrawCnt);
+
     }
 }
