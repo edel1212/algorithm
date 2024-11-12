@@ -42,7 +42,7 @@ public class Q1436 {
                 } // if
             } // while
 
-            bw.write(movieNumber);
+            bw.write(String.valueOf(movieNumber));
             bw.flush();
 
         } catch (Exception e){
