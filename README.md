@@ -57,5 +57,7 @@
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q2231.java)
   - 19532 - 수학은 비대면강의입니다 ☠️(결국 해석 보고 해결 - 좀 더 쉽게 생각하는 자세 필요)
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q19532.java)
-  - 1018 - 체스판 다시 그리기 ☠️(힌트 보고 풀음)
+  - 1018 - 체스판 다시 그리기 ☠️(힌트 보고 품)
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q1018.java)
+  - 1436 - 영화감독 숌 ☠️(힌트 보고 품 - 문제 이해를 못했음 ..)
+    - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q1436.java)
