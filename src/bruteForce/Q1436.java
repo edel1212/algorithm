@@ -27,15 +27,23 @@ public class Q1436 {
              BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))){
             int N = Integer.parseInt(br.readLine());
 
-            String defaultMovieName = "666";
-            if(N >= 2) defaultMovieName = (N-1) + defaultMovieName;
+            // 필수로 포함 되어야 하는 영화명
+            String requiredName = "666";
+            
+            // 해당 문제의 포인트는 666이 포함되며 오름 차순 인것이다
+            int movieSeries = 1;
+            int movieNumber = 666;
+            while (movieSeries != N) {
+                // 영화 수 증가 
+                movieNumber++;
+                // 666이 포함 된다면 해당 시리즈를 올리자
+                if (String.valueOf(movieNumber).contains(requiredName)) {
+                    movieSeries++;
+                } // if
+            } // while
 
-            bw.write(defaultMovieName);
+            bw.write(movieNumber);
             bw.flush();
-
-            // 187 -> 66666
-
-            // 186 ->
 
         } catch (Exception e){
             e.printStackTrace();
