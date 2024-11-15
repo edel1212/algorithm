@@ -32,28 +32,23 @@ public class Q2839 {
             // 배달 횟수
             int resultCnt = 0;
 
-            if(N == 3){
-                bw.write(String.valueOf( N - KG_3));
-                bw.flush();
-                return;
-            }
-            if(N == 4){
-                bw.write("-1");
-                bw.flush();
-                return;
-            }
+            // Loop
+            while(N > 0){
 
-            // 5 Kg
-            while(true){
-                N -= KG_5;
-                resultCnt++;
-                if(KG_5 > N) break;
-            }// while
+                if(N % KG_5 == 0){ // 5의 배수인지 확인 하고 종료
+                    resultCnt += N / KG_5;
+                    break;
+                } else {            // 아닐 경우 -3을 해주고 배달 횟수 카운트
+                    N -= KG_3;
+                    resultCnt++;
+                }// if - else
 
-            // 3 Kg
-            while(0 < N){
-                N -= KG_3;
-                resultCnt++;
+                // 보낼 수 없는 값일 경우 -1로 치환
+                if(N == 1){
+                    resultCnt = -1;
+                    break;
+                }// if
+
             }// while
 
             bw.write(String.valueOf(resultCnt));
