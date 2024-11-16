@@ -62,4 +62,8 @@
   - 1436 - 영화감독 숌 ☠️(힌트 보고 품 - 문제 이해를 못했음 ..)
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q1436.java)
   - 2839 - 설탕 배달 ☠️(힌트 보고 품 - 코드를 불필요하게 복잡하게 구현 )
-    - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q2839.java) 
+    - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/bruteForce/Q2839.java)
+- 👉  재귀
+  - 10872 - 팩토리얼 
+    - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/recursiceFunction/Q10872.java)
+  
