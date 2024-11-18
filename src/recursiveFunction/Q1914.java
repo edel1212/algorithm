@@ -30,7 +30,19 @@ public class Q1914 {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))){
 
-
+            /**
+             *
+             * 하노이 법칙 힌트
+             * 1. 항상 패턴은 같다 ( 목포하는 가장 큰 기둥을 C로 이동하기 위해서는 N-1개를 B로 보내야함 )
+             *    A -> B  [ f(n-1) ]
+             *    A -> C  [ 가장 아래를 옮기는 1번 ]
+             *    B -> C  [ f(n-1) ]
+             * 
+             * 2. 공식으로 변경하면 이동 획수는 총 2의 N 승 -1 이다
+             * 
+             * 3. 첫 시작 N의 값이 짝 수일 경우 처음 시작은 B, 홀 수일 경우 목적 대상인 C로 이동
+             *
+             * */
 
         } catch(Exception e){
             e.printStackTrace();
