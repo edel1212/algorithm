@@ -69,12 +69,15 @@ public class Q1914 {
         };
 
         // 1) N-1개를 시작점에서 중간(tmp)로 이동
+        // 쉽게 설명하면 가장 밑에 판을 target(end)에 보내야 하므로
+        // N-1 번째를 제외한 판을 tmp(mid) 중앙에 두는 것이다
         Hanoi(N - 1, start, end, mid);
 
         // 2) 남은 1개를 시작점에서 마지막으로 이동
         result.append(start + " " + end + "\n");
 
         // 3)  N-1개를 중앙(Temp)에서 마지막로 이동
+        // 중앙에 있던 것들을 target(end)로 옮기는 것이다
         Hanoi(N - 1, mid, start, end);
 
     }
