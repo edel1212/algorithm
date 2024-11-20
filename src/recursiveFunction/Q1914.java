@@ -26,6 +26,9 @@ public class Q1914 {
      * 이는 A번째 탑의 가장 위에 있는 원판을 B번째 탑의 가장 위로 옮긴다는 뜻이다. N이 20보다 큰 경우에는 과정은 출력할 필요가 없다.
      *
      * */
+
+    public static StringBuilder result = new StringBuilder();
+
     public static void main(String[] args) {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))){
@@ -44,8 +47,35 @@ public class Q1914 {
              *
              * */
 
+            int N = Integer.parseInt(br.readLine());
+
+            // 총 이동 값은 2의 N 승 -1
+            result.append((int) (Math.pow(2, N) - 1)).append('\n');
+
+            Hanoi(N,1,2,3);
+
+            bw.write(result.toString());
+            bw.flush();
         } catch(Exception e){
             e.printStackTrace();
         }// try catch
+    }
+
+    public static void Hanoi(int N, int start, int mid, int end) {
+        // 원판이 한개일 경우 시작점 -> 마지막
+        if(N == 1) {
+            result.append(start + " " + end + "\n");
+            return;
+        };
+
+        // 1) N-1개를 시작점에서 중간(tmp)로 이동
+        Hanoi(N - 1, start, end, mid);
+
+        // 2) 남은 1개를 시작점에서 마지막으로 이동
+        result.append(start + " " + end + "\n");
+
+        // 3)  N-1개를 중앙(Temp)에서 마지막로 이동
+        Hanoi(N - 1, mid, start, end);
+
     }
 }
