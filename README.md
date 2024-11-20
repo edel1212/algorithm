@@ -66,4 +66,5 @@
 - 👉  재귀
   - 10872 - 팩토리얼 
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/recursiceFunction/Q10872.java)
-  
+  - 1914 - 하노이 탑 ☠️(힌트 보고 품 - 하노이 법칙을 몰랐음 )
+    - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/recursiceFunction/Q1914.java)
