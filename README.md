@@ -72,3 +72,7 @@
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/recursiveFunction/Q1914.java)
   - 10870 - 피보나치 수
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/recursiveFunction/Q1914.java)
+- 👉  정렬
+  - 2750 - 수 정렬
+    - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/sort/Q2750.java)
+  
