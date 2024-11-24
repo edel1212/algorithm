@@ -75,4 +75,6 @@
 - 👉  정렬
   - 2750 - 수 정렬
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/sort/Q2750.java)
+  - 2587 - 대표값 2
+    - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/sort/Q2587.java)
   
