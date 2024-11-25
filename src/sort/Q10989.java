@@ -2,6 +2,7 @@ package sort;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Q10989 {
@@ -13,13 +14,14 @@ public class Q10989 {
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
              BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))){
-            long N = Long.parseLong(br.readLine());
+            int N = Integer.parseInt(br.readLine());
 
-            List<Long> arr = new ArrayList<>();
-            for(long i = 0 ; i < N; i++ ){
-                arr.add(Long.parseLong(br.readLine()));
+            int[] arr = new int[N];
+            for(int i = 0 ; i < N; i++ ){
+                arr[i] = Integer.parseInt(br.readLine());
             }// for
-            arr.stream().sorted().forEach( i -> {
+
+            Arrays.stream(arr).sorted().forEach(i -> {
                 try {
                     bw.write(String.valueOf(i));
                     bw.newLine();
