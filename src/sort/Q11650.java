@@ -5,7 +5,10 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 public class Q11650 {
     /***
@@ -23,16 +26,25 @@ public class Q11650 {
              BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out))){
             int N = Integer.parseInt(br.readLine());
 
-            int[][] arr = new int[N][N];
-            for(int i = 0 ; i < N ; i++){
+            int[][] arr = new int[N][2];
+            for (int i = 0; i < N; i++) {
                 StringTokenizer stringTokenizer = new StringTokenizer(br.readLine(), " ");
-                for (int j = 0; j < N; j++) {
-                    arr[i][j] = Integer.parseInt(stringTokenizer.nextToken());
-                }
+                arr[i][0] = Integer.parseInt(stringTokenizer.nextToken()); // 각 값을 배열에 저장
+                arr[i][1] = Integer.parseInt(stringTokenizer.nextToken()); // 각 값을 배열에 저장
             }// for
 
-            System.out.println(Arrays.deepToString(arr));
+            List<int[]> result = Arrays.asList(arr).stream().sorted( (row1, row2) ->{
+                if(row1[0] == row2[0]){
+                    return Integer.compare(row1[1],row2[1]);
+                }// if
+                return Integer.compare(row1[0], row2[0]);
+            } ).collect(Collectors.toList());
 
+            for(int[] i : result){
+                bw.write(i[0]+ " " + i[1]);
+                bw.newLine();
+            }//for
+            bw.flush();
 
         } catch (Exception e){
             e.printStackTrace();
