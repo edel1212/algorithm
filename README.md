@@ -77,4 +77,5 @@
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/sort/Q2750.java)
   - 2587 - 대표값 2
     - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/sort/Q2587.java)
-  
+  - 11870 - 좌표 압축 ☠️(시간 초과 - `sortArr.indexOf(item)`사용으로 인한 이슈 :: 선형 검색은 오래 걸린다 Map으로 처리)
+    - 해석      :  [이동](https://github.com/edel1212/algorithm/blob/main/src/sort/Q18870.java)
