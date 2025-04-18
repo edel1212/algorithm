@@ -26,3 +26,21 @@
 - `O(n log n)` : 퀵 정렬(quick sort), 병합정렬(merge sort), 힙 정렬(heap Sort)
 - `O(N²)` : 이중 for문
 - `O(2ⁿ)` : 파보나치 수열
+
+
+## 3 ) O(1)
+- 입력 데이터 크기와 상관없이 **‘항상’ 같은 시간에 실행**
+  - 즉, 데이터가 1개든, 1000개든, 1억 개든 **딱 한 번만 동작**
+### 3 - 1 ) 예시 코드
+```java
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {5, 10, 20, 40, 80}; // 데이터가 여러 개 있어도
+        // O(1) 예시: 첫 번째 요소 출력
+        System.out.println(numbers[0]);
+    }
+}
+```
+
+## 4 ) O(log N)
+- 
