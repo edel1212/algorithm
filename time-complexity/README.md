@@ -194,7 +194,7 @@ public class MergeSortExample {
   - 입력이 2배가 되면 → 수행 시간은 4배
   - 입력이 3배가 되면 → 수행 시간은 9배
   - 입력이 4배가 되면 → 수행 시간은 14배
-### 5 - 1 ) 예시 코드
+### 7 - 1 ) 예시 코드
 ```java
 public class Main {
   public static void main(String[] args) {
@@ -203,6 +203,31 @@ public class Main {
         // 어떤 작업 (예: 비교, 출력, 계산 등)
       }
     }
+  }
+}
+```
+
+## 8 ) O(2ⁿ)
+- 대표적인 예시: 재귀를 이용한 모든 경우의 수 탐색 (예: 피보나치 수열, 부분집합 구하기)
+  - 입력 데이터가 **하나 늘어날 때마다 작업량이 2배 증가**
+  - 극도로 빠르게 작업량이 폭발하는 무서운 복잡도
+  - N이 작을 때만 사용 가능 (N이 조금만 커져도 시간 초과 위험)
+  - 입력이 4배가 되면 → 수행 시간은 14배
+- `O(2ⁿ)`는 n이 20을 넘으면 보통 사용할 수 없음 - 시간이 많으 소요
+  -  **동적 계획법(DP)**을 이용해서 `O(N)` 또는 `O(N²)`로 최적화하여 사용 하는 경우가 많음
+### 8 - 1 ) 예시 코드
+```java
+public class Main {
+  public static int fib(int n) {
+    if (n <= 1) return n; // 종료 조건
+
+    // 각각 n-1, n-2를 다시 계산
+    return fib(n - 1) + fib(n - 2);
+  }
+
+  public static void main(String[] args) {
+    int n = 5;
+    System.out.println(fib(n)); // 피보나치 수열의 n번째 수 출력
   }
 }
 ```
