@@ -187,3 +187,22 @@ public class MergeSortExample {
     }
 }
 ```
+
+## 7 ) O(N²)
+- 대표적인 예시: 이중 반복문(중첩 for문)
+  - 입력 데이터의 크기(N)가 커질 때, 실행 시간이 대략 **N의 제곱에 비례**
+  - 입력이 2배가 되면 → 수행 시간은 4배
+  - 입력이 3배가 되면 → 수행 시간은 9배
+  - 입력이 4배가 되면 → 수행 시간은 14배
+### 5 - 1 ) 예시 코드
+```java
+public class Main {
+  public static void main(String[] args) {
+    for (int i = 0; i < n; i++) { // 외부 for문 → N번 반복
+      for (int j = 0; j < n; j++) { // 내부 for문 → N번 반복
+        // 어떤 작업 (예: 비교, 출력, 계산 등)
+      }
+    }
+  }
+}
+```
