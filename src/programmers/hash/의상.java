@@ -1,6 +1,7 @@
 package programmers.hash;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class 의상 {
     // 목적 : 2차원 배열이 주어질때 각 배열의 1개씩을 조합하여 의상을 만듬 한개씩은 겹치지 않으면 count 인정 - 한개만 입어도 ㄱㅊ
@@ -31,6 +32,18 @@ public class 의상 {
 
         // 모두 아무것도 안 입을 경우의 수 인 1을 빼줌
         return answer - 1;
+    }
+
+    public int solution2(String[][] clothes) {
+
+        return Arrays.asList(clothes).stream()
+                // Map 변환
+                .collect(Collectors.groupingBy( k -> k[1]
+                        , Collectors.mapping( p -> p[0], Collectors.counting() ) ))
+                .values()
+                .stream()
+                .reduce(1L, (i, j) -> i * (j + 1))
+                .intValue() - 1;
     }
 }
 
