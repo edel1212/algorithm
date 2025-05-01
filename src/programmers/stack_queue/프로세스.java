@@ -22,12 +22,14 @@ public class 프로세스 {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
         for(int prior : priorities ) priorityQueue.offer(prior);
 
-        // 내림 차순 정렬된 Queue Loop
+        // 내림 차순 정렬된 Queue Loop -  3, 2, 2, 1, 1
         while(!priorityQueue.isEmpty()){
 
-            // Loop  priorities
+            // Loop  priorities - 2, 1, 1, 3, 2
             for( int i = 0; i < priorities.length ; i++ ){
 
+                System.out.println("priorityQueue.peek() :: " + priorityQueue.peek());
+                System.out.println("priorities["+i+"] :: " + priorities[i]);
                 if( priorityQueue.peek() == priorities[i] ){
                     answer++;
                     priorityQueue.poll();
@@ -40,4 +42,29 @@ public class 프로세스 {
 
         return answer;
     }
+
+    public int solution2(int[] priorities, int location){
+        int answer = 0;
+
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
+        for(int item : priorities) priorityQueue.offer(item);
+
+        while(!priorityQueue.isEmpty()){
+
+            for(int i = 0 ; i < priorities.length ; i++){
+
+                if( priorityQueue.peek() == priorities[i] ){
+                    answer++;
+                    priorityQueue.poll();
+                    if( i == location ) return answer;
+                }// if
+
+            }// for
+
+        }// while
+
+        return answer;
+    }
+
+
 }
