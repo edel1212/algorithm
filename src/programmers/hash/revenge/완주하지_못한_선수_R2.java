@@ -36,6 +36,15 @@ public class 완주하지_못한_선수_R2 {
 
         } // for
 
+        for(String player : participantMap.keySet()){
+
+            Long peopleCnt = participantMap.get(player);
+
+            if( peopleCnt > 0 ) return player;
+
+        } // for
+
+
         return answer;
     }
 }
