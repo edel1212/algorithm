@@ -44,4 +44,26 @@ public class 올바른_괄호_R2 {
 
         return stack.isEmpty();
     }
+
+    boolean solution3(String s){
+
+        Deque<Character> stack = new ArrayDeque<>();
+
+
+        for(Character c : s.toCharArray()){
+
+            if(c == '('){
+                stack.push(c);
+            } else {
+
+                if(stack.isEmpty()) return false;
+
+                stack.pop();
+            } //
+
+        }// for
+
+        return stack.isEmpty();
+    }
+
 }
