@@ -23,7 +23,7 @@ public class 주식가격_R2 {
 
             while( !stack.isEmpty() && prices[time] < prices[stack.peek()] ){
                 int prevTime = stack.pop();
-                answer[time] = time - prevTime;
+                answer[prevTime] = time - prevTime;
             } // while
 
             stack.push(time);
@@ -51,7 +51,7 @@ public class 주식가격_R2 {
             // 과거 값이 더 큰게 있는지 확인
             while(!stack.isEmpty() && prices[time] < prices[stack.peek()]  ){
                 int prevTime = stack.pop();
-                answer[time] = time - prevTime;
+                answer[prevTime] = time - prevTime;
             } //
             stack.push(time);
 
