@@ -20,6 +20,7 @@ public class 디스크_컨트롤러 {
         new 디스크_컨트롤러().solution(jobs);
     }
 
+    // 👎 잘못된 풀이 3 순위 비교 작업이 누락되었음
     public int solution(int[][] jobs) {
         //  작업의 요청 시각 기준 정렬
         Arrays.sort(jobs, Comparator.comparingInt(a -> a[0]));
