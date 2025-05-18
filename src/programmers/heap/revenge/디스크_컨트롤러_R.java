@@ -18,7 +18,7 @@ public class 디스크_컨트롤러_R {
     //            - l은 작업의 소요시간이며 1 ≤ l ≤ 1,000입니다.
     //               [요청되는 시점, 소요시간] 형태입니다.
     public static void main(String[] args){
-        int[][] jobs= {{0, 3}, {10, 9}, {3, 5}};
+        int[][] jobs= {{1, 3}, {10, 9}, {3, 5}};
         new 디스크_컨트롤러_R().solution(jobs);
     }
 
@@ -82,5 +82,63 @@ public class 디스크_컨트롤러_R {
 
         return totalTime / jobCnt;
     }
+
+
+
+    public int solution2(int[][] jobs) {
+        int jobCount = jobs.length;
+
+        // 2차원 배열 3번째 index에는 순서르 저장할 영역을 추가
+        int[][] jobWithIndex = new int[jobCount][3];
+        for(int i = 0 ; i < jobCount; i++){
+            jobWithIndex[i][0] = jobs[i][0];
+            jobWithIndex[i][1] = jobs[i][1];
+            jobWithIndex[i][2] = i;
+        } // for
+
+        // 요청 순서에 맞게 정렬
+        Arrays.sort(jobWithIndex, Comparator.comparingInt( o -> o[0]));
+
+        // 순차적으로 저장이 되는 우선순위 큐 추가
+        PriorityQueue<int[]> heap = new PriorityQueue<>((o1, o2)->{
+            if(o1[1] != o2[1]) return o1[1] - o2[1];
+            if(o1[0] != o2[0]) return o1[0] - o2[0];
+            return o1[2] - o2[2];
+        });
+
+        // 총 사용 시간
+        int totalCount = 0;
+        // 현재 지삭
+        int currentTime = 0;
+        // 작업 순서
+        int jobIndex = 0;
+        // 완려된 작업
+        int completed = 0;
+
+        // 작업이 완료될 때까지 loop
+        while(completed < jobCount){
+
+            // jobIndex가 존재하면서, 작업 시간 내 일 경우
+            while( jobIndex < jobCount && jobWithIndex[jobIndex][0] <= currentTime){
+                heap.offer(jobWithIndex[jobIndex]);
+                jobIndex++;
+            } // while
+
+            if(!heap.isEmpty()){
+                int[] currentJob = heap.poll();
+                currentTime += currentJob[1];
+                // 실행 시간 - 요청 시간 ( pending된 시간을 빼서 실제 실행된 시간만 구함 )
+                totalCount += currentTime - currentJob[0];
+                // 완료 개수 추가
+                completed++;
+            } else {
+                currentTime = jobWithIndex[jobIndex][0];
+            }// if - else
+
+        } // while
+
+        return totalCount / jobCount;
+    }
+
 }
 
