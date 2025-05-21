@@ -18,7 +18,32 @@ public class 최소직사각형 {
         new 최소직사각형().solution(sizes);
     }
     public int solution(int[][] sizes) {
-        int answer = 0;
-        return answer;
+        int maxWidth = 0;
+        int maxHeight = 0;
+
+        for (int[] size : sizes) {
+            int width = Math.max(size[0], size[1]);
+            int height = Math.min(size[0], size[1]);
+
+            maxWidth = Math.max(maxWidth, width);
+            maxHeight = Math.max(maxHeight, height);
+        } // for
+
+        return maxWidth * maxHeight;
     }
+
+
+    public int solution2(int[][] sizes) {
+        int maxWidth = 0;
+        int maxHeight = 0;
+        for(int[] size : sizes){
+            int width = Math.max(size[0], size[1]);
+            int height = Math.min(size[0], size[1]);
+
+            maxWidth = Math.max(maxWidth, width);
+            maxHeight = Math.max(maxHeight, height);
+        } // for
+        return maxWidth * maxHeight;
+    }
+
 }
