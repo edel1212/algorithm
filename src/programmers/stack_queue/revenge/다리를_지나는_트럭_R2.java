@@ -24,49 +24,43 @@ public class 다리를_지나는_트럭_R2 {
     // 3. 트럭 길이만큼 loop
     // 4. 해당 트럭 길이 만큼 내브에서 트럭의 개수 줄지어 등장 시킴
     public int solution(int bridge_length, int weight, int[] truck_weights) {
+        int answer;
 
         Queue<Integer> vBridge = new LinkedList<>();
+        // 현재 트럭을 올려두기 위해 하나릘 제외하고 l-pad 시킴
+        for(int i = 0 ; i < bridge_length - 1 ; i++) vBridge.offer(0);
 
-        for(int i = 0 ; i < bridge_length - 1 ; i++ ) vBridge.offer(0);
-
-        // 첫번째 트럭 다리위에 올림
-        int currentBridgeWeight = truck_weights[0];
-        vBridge.offer(currentBridgeWeight);
-        int time = 1;
-        // 다음 트럭의 순번
+        // 현재 트럭을 가상의 다리 queue에 올려둠
+        int currentTruckWeight = truck_weights[0];
+        vBridge.offer(currentTruckWeight);
+        answer = 1;
+        // 첫번째 트럭은 다리위에 올라왔기에 1번부터 시작
         int index = 1;
 
         while(!vBridge.isEmpty()){
-            time++; // 앞으로 한칸 전진 하므로 시간 ++
+            // 시간 추가
+            answer++;
+            // 다리위의 트럭 제거
+            int outOfBridge = vBridge.poll();
+            currentTruckWeight -= outOfBridge;
 
-            // 다음 칸으로 이동 (다리를 빠져 나감)
-            int removeVBride = vBridge.poll();
-            // 다리를 빠져 나갔으나 제거
-            currentBridgeWeight -= removeVBride;
-
-            // index가 사용 가능한 순번인지 체크
             if( index < truck_weights.length ){
 
-                int newTruck = truck_weights[index];
-
-                // 트럭의 무게를 버틸 수 있는지 확인
-                if(newTruck + currentBridgeWeight <= weight){
-                    // 현재 다리에 신규 트럭 입장으로 무게 추가
-                    currentBridgeWeight += truck_weights[index];
-                    // 가상의 다리에 현자 트럭 추가
-                    vBridge.offer(truck_weights[index]);
-                    // 순번 추가
+                int truckWeight = truck_weights[index];
+                if( currentTruckWeight + truckWeight <= weight  ){
+                    // 다리위 트럭 무게를 올림
+                    currentTruckWeight += truckWeight;
+                    vBridge.offer(truckWeight);
                     index++;
                 } else {
-                    // 해당 다음 순번 트럭은 올라 갈 수가 없으므로 0으로 자리를 매꿈
                     vBridge.offer(0);
-                } // if
+                } // if - else
 
-            }// if
+            } // if
 
-        } // while
+        } // loop
 
-        return time;
+        return answer;
     }
 
     public int solution2(int bridge_length, int weight, int[] truck_weights){
