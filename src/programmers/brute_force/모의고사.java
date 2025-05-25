@@ -1,7 +1,6 @@
-package programmers.stack_queue;
+package programmers.brute_force;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class 모의고사 {
     // goal : 1번 문제부터 마지막 문제까지의 정답이 순서대로 들은 배열 answers가 주어졌을 때,
