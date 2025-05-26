@@ -62,4 +62,17 @@ public class 소수찾기 {
         } //for
         return true;
     }
+
+    /*************************************/
+    private void generateNumbers2(String addNum, String remainingNum){
+        if(!addNum.isEmpty()) numberSet.add(Integer.parseInt(addNum));
+
+        for(int i = 0 ; i < remainingNum.length(); i ++){
+            String makeAddNum = addNum + remainingNum.charAt(i);
+            String rem = remainingNum.substring(0,i) + remainingNum.substring(i+2);
+            generateNumbers2(makeAddNum, rem);
+        } // for
+
+    }
+
 }
