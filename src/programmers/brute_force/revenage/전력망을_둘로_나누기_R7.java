@@ -92,7 +92,7 @@ public class 전력망을_둘로_나누기_R7 {
         visited[node] = true;
 
         for( int next : graph.get(node) ){
-            if(!visited[node]){
+            if(!visited[next]){
                 count += dfs( next, visited,graph );
             } // if
         } // for
