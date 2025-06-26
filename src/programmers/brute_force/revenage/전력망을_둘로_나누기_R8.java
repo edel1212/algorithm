@@ -6,6 +6,21 @@ import java.util.List;
 import java.util.Queue;
 
 public class 전력망을_둘로_나누기_R8 {
+    public static void main(String[] args) {
+        전력망을_둘로_나누기_R8 solution = new 전력망을_둘로_나누기_R8();
+
+        int n = 7;
+        int[][] wires = {
+                {1, 2},
+                {2, 7},
+                {3, 7},
+                {3, 4},
+                {4, 5},
+                {6, 7}
+        };
+
+        int result = solution.solution(n, wires);
+    }
     public int solution(int n, int[][] wires) {
         int minDiff = Integer.MAX_VALUE;
 
