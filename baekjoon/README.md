@@ -1,6 +1,14 @@
 # algorithm
 
-### 틀렸던 문제
+# 틀렸던 문제
+
+## 완전 탐색
+- 샐프넘버
+  - 결과 : [ X ]
+  - 풀이 날짜 : 25.7.02
+  - 재도전 - 결과 : [ X ]
+
+# 틀렸던 문제 ( 예전 )
 - 👉 1차원 배열
   - 10811 - 바구니 뒤집기 :: [이동](https://github.com/edel1212/algorithm/blob/main/src/oneDimensArr/Q10811.java) 
 - 👉  문자열
