@@ -23,6 +23,7 @@ public class 유레카_이론_R {
             int inputNum = Integer.parseInt(br.readLine());
 
             for(int i = 0 ; i < inputNum; i++){
+                flag = false;
                 int targetNum = Integer.parseInt(br.readLine());
                 dfs(0,targetNum,0);
                 bw.write( flag ? "1":"0" );
