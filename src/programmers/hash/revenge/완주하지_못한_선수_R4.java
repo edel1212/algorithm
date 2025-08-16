@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class 완주하지_하지_못한_선수_R4 {
+public class 완주하지_못한_선수_R4 {
 
     public String solution(String[] participant, String[] completion) {
 
