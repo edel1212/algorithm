@@ -54,3 +54,10 @@ for i = 1 to 50 do
     
 System.out.println( 응답 값 % 10_007 )
 ```
+
+### 2 - 5 ) 정렬
+- 배열의 경우 `Arrays.sort()` 내장 함수를 사용해서 쉽게 정렬이 가능하다.
+  - 오름차순 : `Arrays.sort(new int[]{...})`
+  - 내림차순 : `Arrays.sort(new Integer[]{...}, Collections.reverseOrder())`
+    - 내림 차순에 사용되는 `Collections.reverseOrder()`를 사용하기 위해서는 기본형이 아닌 **Wrapper Class로 되어있어야 한다.**
+    - Wrapper Class 제한이 있을 경우 음수로 변환 후 오름차순 정렬 후 다시 양수로 변환하는 등의 **다양한 접근 방식을 유연하게 떠올리는 것이 중요**
