@@ -12,7 +12,7 @@
 
 ### 2 - 2 ) 시간 초과
 - 시간 초과가 날 경우 **적절한 시간 복잡도를 사용**하여 처리한다 ( 1초 -> 1억 연산 기준으로 빅오 표기법에 대입하여 처리 )
-- 적절한 시간 복잡도를 사용해도 시간 초과가 날 경우 `Buffered Class`를 사용하여 I/O를 처리
+- 적절한 알고리즘을 사용해도 시간 초과가 날 경우 `Buffered Class`를 사용하여 I/O를 처리
   - 간단한 입출력에서는 Scanner 와 차이가 없지만 **입출력이 많아질 수록 그차이는 점점 커짐**
   - 차이
     - Bad 👎
@@ -61,3 +61,14 @@ System.out.println( 응답 값 % 10_007 )
   - 내림차순 : `Arrays.sort(new Integer[]{...}, Collections.reverseOrder())`
     - 내림 차순에 사용되는 `Collections.reverseOrder()`를 사용하기 위해서는 기본형이 아닌 **Wrapper Class로 되어있어야 한다.**
     - Wrapper Class 제한이 있을 경우 음수로 변환 후 오름차순 정렬 후 다시 양수로 변환하는 등의 **다양한 접근 방식을 유연하게 떠올리는 것이 중요**
+
+### 2 - 6 ) 다중 조건 정렬
+> 참고 : [링크](https://github.com/edel1212/algorithm/blob/main/src/do_it/multiple_sort/ex01.java)
+- 다중 조건 정렬을 처리할 떄는 `Comparable`과 `Comparator`가 있다.
+- **Comparable** : 클래스 내부에서 자기 자신과 다른 객체 비교 기준 정의
+  - 객체 스스로 기준을 가지고 있음.
+  - 객체(구현체) 내부에서 내부 호출 사용
+- **Comparator** : 외부 클래스/람다로 별도의 비교 기준 정의
+  - 외부에서 다양한 기준을 넣어줌.
+  - 정렬에 사용 될 Class로 사용 - 구현체 정렬 시 **인자 값으로 주입하여 사용**
+
