@@ -77,3 +77,7 @@ System.out.println( 응답 값 % 10_007 )
 - 선언 후 메모리에 할당(초기화) 해주는 작업을 진행해 줘야함 ( IndexOutOfBoundException 발생 )
   - `for(int i = 0 ; i < 10 ; i ++) list.get(i).add( new ArrayList() ) `
 - 데이터를 저장하거나 가져올 때는 **노드(Node)를 기준**으로 해서 저장 및 데이터를 가져 올 수 있다.
+
+
+## 3 ) 문제 풀이
+- 숫자의 합 구하기 [O]
