@@ -10,22 +10,22 @@ public class 수들의_합_5 {
         int N = Integer.parseInt(br.readLine());
 
         int count = 1;
-        int startIndex = 1;
-        int endIndex = 1;
+        int start = 1;
+        int end = 1;
         int sum = 1;
 
-        while(endIndex != N){ // 해당 로직으로 인해 N(자기 자신)은 제외 되기에 count를 1로 초기화 함
+        while(end != N){ // 해당 로직으로 인해 N(자기 자신)은 제외 되기에 count를 1로 초기화 함
             if( sum == N ){
                 count++;
-                endIndex++;
-                sum += endIndex;
+                end++;
+                sum += end;
             } else if(sum < N){
-                endIndex++;
-                sum += endIndex;
+                end++;
+                sum += end;
             } else {
-                // ✅ 값을 빼줄 때는 start Point를 빼기전에 작업 해줘야함
-                startIndex++;
-                sum -= startIndex;
+                // ✅ 값을 빼줄 때는 start point를 빼기전에 작업 해줘야함
+                start++;
+                sum -= start;
             } // if - else
         } // while
 
