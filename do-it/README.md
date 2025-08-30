@@ -102,6 +102,15 @@ System.out.println( 응답 값 % 10_007 )
   - 공식 : `D[x2][y2] - D[x1-1][y2] - D[x2][y1-1] + D[x1-1][y1-1]`
     - 가장 끝 합 배열 좌표값 - 제외할 상단 값 - 제외할 좌측 값 + 중복해서 제거된 값 
 
+### 3 - 2 ) 투 포인터 ( Two Pointers )
+![img_1.png](img_1.png)
+- 배열에 순차적으로 접근해야할 때 두개의 점의 위치를 기록하면서 처리하는 알고리즘
+  - O(N²) 의 시간복잡도를 O(N)으로 처리가 가능함
+- 각각의 시작 pointer와 종료 포인터를 지정한 후 결과 값을 도출함
+  - 각각의 Pointer의 위치는 **문제의 유형 따라 다름**
+    - 2개의 수의 합 : [참고](https://github.com/edel1212/algorithm/blob/main/src/baekjoon/twoPointer/%EB%91%90_%EC%88%98%EC%9D%98_%ED%95%A9.java)
+    - 지정 범위 합 개수 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%88%98%EB%93%A4%EC%9D%98_%ED%95%A9_5.java)
+
 ## 4 ) 문제 풀이
 - 숫자의 합 구하기 [O]
 - 평균 [O]
@@ -109,4 +118,4 @@ System.out.println( 응답 값 % 10_007 )
 - 구간의 합 구하기기 [O]
 - 구간의 합 구하기기2 [X]
 - 나머지의 합 구하기 [X]
-
+- 수들의 합 [X]
