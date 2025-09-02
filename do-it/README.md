@@ -111,6 +111,9 @@ System.out.println( 응답 값 % 10_007 )
     - 2개의 수의 합 : [참고](https://github.com/edel1212/algorithm/blob/main/src/baekjoon/twoPointer/%EB%91%90_%EC%88%98%EC%9D%98_%ED%95%A9.java)
     - 지정 범위 합 개수 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%88%98%EB%93%A4%EC%9D%98_%ED%95%A9_5.java)
 
+## 3 - 3 ) 슬라이딩 윈도우
+- 투 포인터에서 조금 개념만 바꾼 알고르즘 방식이다 ( 지정 범위를 유지하며 한칸 씩 같이 이동 )
+
 ## 4 ) 문제 풀이
 - 숫자의 합 구하기 - 11720번 [O]
 - 평균 - 1546번 [O]
@@ -120,3 +123,5 @@ System.out.println( 응답 값 % 10_007 )
 - 나머지의 합 구하기 - 2018번 [X]
 - 주몽 - 1940번 [O]
 - 좋은 수 구하기 - 1253번 [X]
+- DNA 비밀번호 - 12891번 [X]
+  - 재풀이 [O]
