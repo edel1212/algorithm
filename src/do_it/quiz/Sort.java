@@ -66,4 +66,38 @@ public class Sort {
         } // for
     }
 
+     public static void quickSort(int[] arr , int left, int right){
+        // 재귀 종료 조건 left가 right 보다 커질경우
+        if(right <= left) return;
+
+        // 피벗 대상
+        int pivot = arr[ (left + right) / 2 ];
+        // 나눠진 그룹의 대상이 될 값
+        int baseIndex = partition(arr, left, right, pivot);
+        
+        // 왼쪽 그룹
+        quickSort(arr, left, baseIndex -1);
+        // 오른쪽 그룹
+        quickSort(arr, baseIndex, right);
+    }
+
+    public static int partition(int[] arr , int left, int right, int pivot){
+        while(left <= right){
+            // left >> 쉬프트
+            while(arr[left]< pivot) left++ ;
+            // right << 쉬프트
+            while(arr[right] > pivot) right--;
+
+            if(left <= right){
+                int tmp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = tmp;
+                // 서로 교환 했기에 각자 포인터를 다음 타자로 쉬프트
+                left++;
+                right--;
+            }
+        }// if
+        // 가장 왼쪽으로 정렬하기에 left를 기준으로 함
+        return left;
+    }
 }
