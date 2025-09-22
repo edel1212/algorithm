@@ -8,7 +8,8 @@ public class Sort {
 
         //bubbleSort(arr);
         //selectedSort(arr);
-        insertSort(arr);
+        //insertSort(arr);
+        mergeSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -100,4 +101,71 @@ public class Sort {
         // 가장 왼쪽으로 정렬하기에 left를 기준으로 함
         return left;
     }
+
+    /**
+     * 요소를 최대한 분할 후 정렬 해가며 병합 하는 정렬 알고리즘
+     * 시간 복잡도 O(nlogn)
+     *
+     * @param arr the base arr
+     * @param left  the left index
+     * @param right the right index
+     */
+    public static void mergeSort(int[] arr, int left, int right){
+        // 재귀 종료 조건 더 이상 진행 할 분할 할 수 없을 경우
+        if(left >= right) return;
+
+        // 분할 중앙 값
+        int mid = (left + right) / 2;
+
+        // 왼쪽 분할 left ~ mid
+        mergeSort(arr, left, mid);
+        // 오른쪽 분할 mid ~ right
+        mergeSort(arr, mid + 1 , right);
+
+        // 병합 및 정렬
+        merge(arr, left, mid, right);
+    }
+
+    public static void merge(int[] arr, int left , int mid , int right){
+        // 임시 배열
+        int[] tmp = new int[ right - left + 1 ];
+        // 왼쪽 배열 포인터
+        int i = left;
+        // 오른쪽 배열 포인터
+        int j = mid + 1;
+        // 임시 배열 인덱스 값ㄴ
+        int k = 0;
+
+        // 왼쪽 과 오른쪽 포인터가 비교가 가능 할 경우
+        while(i <= mid && j <= right){
+            if(arr[i] <= arr[j]){
+                tmp[k] = arr[i];
+                i++;
+            } else{
+                tmp[k] = arr[j];
+                j++;
+            } // if - else
+            k++;
+        } // while
+
+        // 남은 왼쪽 값
+        while(i <= mid){
+            tmp[k] = arr[i];
+            k++;
+            i++;
+        } // while
+
+        // 남은 오른쪽 값
+        while(j <= right){
+            tmp[k] = arr[j];
+            k++;
+            j++;
+        } // while
+
+        // tmp -> arr
+        for(int t = 0 ; t < tmp.length; t++){
+            arr[left + t] = tmp[t];
+        } // for
+    }
+
 }
