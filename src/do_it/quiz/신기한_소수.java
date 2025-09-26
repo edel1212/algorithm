@@ -4,32 +4,38 @@ import java.io.*;
 
 public class 신기한_소수 {
     static int N;
+    static BufferedWriter bw;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // 입력받은 자릿수의 값
         N = Integer.parseInt(br.readLine());
 
         // 시작 값
-        String[] startPrimeNum = {"2", "3", "5", "7"};
+        int[] startPrimes = {2, 3, 5, 7};
 
-        for(String s : startPrimeNum){
-            dfs(s);
+        for (int prime : startPrimes) {
+            dfs(prime, 1);  // (숫자, 현재 자릿수)
         } // for
 
         bw.flush();
         bw.close();
     }
 
-    public static void dfs(String num){
-        if(num.length() > N) return;
-        if(!isPrime(Integer.parseInt(num))) return;
-        if(num.length() == N){
-            System.out.println(num);
+    public static void dfs(int num, int depth) throws IOException{
+        // 소수가 아닐 경우 제외
+        if (!isPrime(num)) return;
+
+        // 원하는 자릿수의 소수면 출력
+        if (depth == N) {
+            bw.write(num + "\n");
+            return;
         } // if
+
+        // 뒤에 소수가 가능한 범위인 {1, 3, 7, 9}을 사용하는 방법 또한 있음
         for(int i = 0 ; i < 10; i++){
-            dfs(num + i);
+            dfs(num * 10 + i, depth + 1);
         } // for
 
     }
