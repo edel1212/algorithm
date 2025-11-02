@@ -22,13 +22,19 @@ public class K번째_수 {
             // 중간값 (현재 탐색 중인 값)
             long middle = (start + end) / 2;
             // 중간 값 이하를 카운트
-            long cnt = 0;
+            long count = 0;
 
             // 각행 마다 중앙 값 기준이하의 개수를 카운트
             for(int i = 1; i <= N; i++){
-                cnt += Math.min( middle / i , N );
+                count += Math.min( middle / i , N );
             } // for
 
+            if(count < K){
+                start = middle + 1;
+            } else {
+                result = middle;
+                end = middle -1;
+            } // if - else
         } // while
 
         bw.write(String.valueOf(result));
