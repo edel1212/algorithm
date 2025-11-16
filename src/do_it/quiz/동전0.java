@@ -19,15 +19,21 @@ public class 동전0 {
         }//for
 
         int count = 0;
-        int sum = 0;
         for(int i = A.length-1; i >= 0; i--){
-            if( K < A[i] || sum + A[i] > K ){
-                continue;
-            } //if
-            while(sum + A[i] <= K){
-                count++;
-                sum += A[i];
-            }// while
+
+            // ✅ 더 효율적인 시간복잡도로 처리 O(N)
+            if(K > A[i]){
+                count += K/ A[i];
+                K %= A[i];
+            } // if
+// ❌ 해당 방식은 시간 복잡도가 O(K)가 나온다.
+//            if( K < A[i] || sum + A[i] > K ){
+//                continue;
+//            } //if
+//            while(sum + A[i] <= K){
+//                count++;
+//                sum += A[i];
+//            }// while
         } //
 
         bw.write(String.valueOf(count));
