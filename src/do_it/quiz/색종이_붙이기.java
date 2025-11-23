@@ -81,7 +81,8 @@ public class 색종이_붙이기 {
     public static boolean check(int x, int y , int size){
         // 좌표를 초과할 경우
         if( x + size > 10 || y + size > 10 ) return false;
-        // 확인 가능한 부분 전체 확인
+        // 대상 위치에서 부터 2중 반복문을 통해
+        // 범위까지 확인 가능한 부분인지 확인
         for(int i = y; i < y + size ; i++){
             for(int j = x; j < x + size ; j++){
                 if(M[i][j] == 0) return false;
