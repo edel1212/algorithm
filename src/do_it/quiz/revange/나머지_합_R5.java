@@ -3,7 +3,7 @@ package do_it.quiz.revange;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class 나머지의_합_R4 {
+public class 나머지_합_R5 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
