@@ -19,7 +19,7 @@ public class 여행_가자 {
         parent = new int[N + 1];
         for (int i = 1; i <= N; i++)  parent[i] = i; // 처음에는 자기 자신이 부모(대표)임
 
-        // 인접 행열을 읽으면서 도시 연결하기 (union)
+        // 인접 행열을 읽으면서 도시 연결하기 (union) - 인접행열을 바로 읽어 union 처리함
         for(int i = 1 ; i <= N ; i++){
             StringTokenizer stringTokenizer = new StringTokenizer(br.readLine());
             // 연결 관계 확인
