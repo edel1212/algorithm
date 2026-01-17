@@ -26,7 +26,7 @@ public class K번째_최단경로_찾기 {
             int E = Integer.parseInt(st.nextToken());
             int W = Integer.parseInt(st.nextToken());
 
-            // 인접 행렬
+            // 인접 리스트 insert
             graph.get(S).add(new Node(E, W));
         } // for
 
@@ -50,7 +50,7 @@ public class K번째_최단경로_찾기 {
         // 시작점 초기화 - 첫번째 도시를 기준으로 시작함 (당연히 가중치는 0)
         pq.offer(new Node(1,0));
         // 최단 거리 배열 또한 시작점(거리 0) 등록!
-        allCityDisHeap[1].add(0);
+        allCityDisHeap[1].offer(0);
 
         // 다익스트라 진행
         while(!pq.isEmpty()){
