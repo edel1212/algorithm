@@ -1,4 +1,4 @@
-package do_it;
+package do_it.quiz;
 
 import java.io.*;
 import java.util.Arrays;
