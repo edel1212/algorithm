@@ -17,7 +17,9 @@ public class 다리_만들기2 {
     static boolean[][] visited;
     // 섬 식별 번호
     static int islandNum = 0;
-    // 다리(간선) 기준ㄴ 정보를 담을 우선순위 큐(거리가 짧으 순 정렬)
+    // 다리(간선) 기준 정보를 담을 우선순위 큐(거리가 짧으 순 정렬)
+    // ㄴ> ✅ 우선순위 큐를 사용하는 이유는 배열의 개수가 동적으로 처리되기 때문이다 (문제내 조건에 따라 무조건 다리개 생기는게 아니기 때문임)
+    //   ==> 가변적 길이 + 정렬이 필요하기에 한번에 처리 가능한 우선 순위 큐를 쓰는게 자연스러운 구현 방법임
     static PriorityQueue<Edge> pq = new PriorityQueue<>();
     // union-find에 사용될 Root 노드 배열
     static int[] parent;
@@ -60,7 +62,10 @@ public class 다리_만들기2 {
         // ✅ 2. [Brute Force] 지도의 모든 땅에서 4방향으로 다리 놓기
         for(int i = 0 ; i < N ; i++){
             for(int j = 0 ; j < M ; j++){
-                makeBridge(i, j, map[i][j]);
+                // 반드시 땅(섬)에서만 출발해야 함
+                if(map[i][j] != 0) {
+                    makeBridge(i, j, map[i][j]);
+                }
             } //for
         } //for
 
