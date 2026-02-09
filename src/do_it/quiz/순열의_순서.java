@@ -29,12 +29,11 @@ public class 순열의_순서 {
 
         if(type == 1){
             int[] result = new int[N];
-            // 찾고자 하는 배열의 index
+            // ✅ 찾고자 하는 배열의 index (Long으로 선언 이유는 N!로 값이 구해지기 때문임)
             long K = Long.parseLong(st.nextToken());
             // 0번째 부터
             for(int i = 0 ; i  < N ; i++){
                 // 내 뒷칸을 확인 하는 것임 (N이 4일 경우 : 4 - 1 - 0 = 3!)
-                // 자료 형이 long인 이유는 20! 의 값은 기하급수적으로 늘어나기 때문이다.
                 long blockSize = F[N - 1 - i];
                 // 1로 채워 나감
                 for(int j = 1; j <= N ; j++){
@@ -43,9 +42,11 @@ public class 순열의_순서 {
                         result[i] = j;
                         visited[j] = true;
                         // continue; << 이거 아니야
-                        // 구했으면 다음 단계로 넘어가
+                        // ✅구했으면 다음 단계로 넘어가하므로 break를 사용!
                         break;
                     }// if
+
+                    // 범위에 없다면 값을 통째로 스킵
                     K -= blockSize;
                 }// for
             } // for
@@ -67,6 +68,7 @@ public class 순열의_순서 {
             for(int i = 0 ; i < N ; i++){
                 // 첫번째 배열과 입력 받은 배열의 값 비교
                 for(int j = 1 ; j < A[i]; j++){
+                    // 해당 값을 사용했는지 확인
                     if(visited[j]) continue;
                     // 나보다 앞서 있는 순열들의 개수(건너뛴 개수)를 누적
                     ans += F[ N - 1 - i];
@@ -76,8 +78,7 @@ public class 순열의_순서 {
             }// for
 
             bw.write(String.valueOf(ans));
-        } //
-
+        } // if - else
 
         bw.flush();
         bw.close();
