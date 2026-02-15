@@ -144,7 +144,7 @@
   - 2개의 수의 합 : [참고](https://github.com/edel1212/algorithm/blob/main/src/baekjoon/twoPointer/%EB%91%90_%EC%88%98%EC%9D%98_%ED%95%A9.java)
   - 지정 범위 합 개수 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%88%98%EB%93%A4%EC%9D%98_%ED%95%A9_5.java)
 
-## 3 - 3 ) 슬라이딩 윈도우
+## 3 ) 슬라이딩 윈도우
 
 - **투 포인터(Two Pointers)** 알고리즘의 일종으로, **고정된 길이의 범위(Window)**를 유지하며 이동하는 방식
   - 두 개의 포인터(`left`, `right`)가 **같은 간격**을 유지하며 한 칸씩 함께 이동
@@ -163,10 +163,21 @@
   - DNA 비밀번호 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/DNA_%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8.java)
   - 최솟값 찾기 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%B5%9C%EC%86%9F%EA%B0%92_%EC%B0%BE%EA%B8%B0.java)
 
-## 3 - 4 ) 덱 (Deque)
+## 4 ) 덱 (Deque)
+- Double-Ended Queue의 줄임말로, **양쪽 끝(Front, Rear)에서 삽입과 삭제가 모두 가능**한 자료구조
+  - `스택(Stack)`과 `큐(Queue)`의 기능을 합친 형태
+  - 가변 크기로 필요에 따라 **크기가 동적으로 조절**
+- **시간 복잡도** : 양쪽 끝에서의 삽입/삭제 하여, **O(1)** 로 매우 빠름
+  - 덱을 사용한 슬라이딩 윈도우를 풀 경우 **"이미 정렬된 상태(후보군)"** 의 문제에 활용하여 풀 수 있다.
+  - 모든 슬라이딩 윈도우 문제에 덱을 쓰면 더 복잡해지거나 쓸모없는 경우도 많고, 풀 수 도 없음
+- 슬라이딩 윈도우 문제 안에서 "가장 큰 값" 또는 **"가장 작은 값"** 을 계속 알아내야 할 때 사용 할 수 있다.
+- **주요 메서드 (Java)**:
+  - 삽입: `addFirst(), addLast(), offerFirst(), offerLast()`
+  - 삭제: `removeFirst(), removeLast(), pollFirst(), pollLast()`
+  - 조회: `getFirst(), getLast(), peekFirst(), peekLast()`
 
-- 배열의 **앞에서도 추가, 삭제, 조회** || **뒤에서도 추가, 삭제, 조회**가 가능한 자료 구조다
-  - ex) `deque.getFirst()`, `deque.getLast()`, `deque.removeFist()` ...
+- 참고 문제
+  - DNA 비밀번호 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/DNA_%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8.java)
 
 ## 4 ) 정렬
 
