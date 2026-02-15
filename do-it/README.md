@@ -179,6 +179,17 @@
 - 참고 문제
   - DNA 비밀번호 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/DNA_%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8.java)
 
+## 5 ) 스택 (Stack)
+- 후입선출(LIFO, Last In First Out) 형태의 자료구조
+- **주요 메서드 (Java)**:
+  - 삽입: `push()`
+  - 조회: `peek()`
+  - 소모: `pop()`
+
+- 참고 문제
+  - 스택 수열  : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%8A%A4%ED%83%9D%EC%9C%BC%EB%A1%9C_%EC%88%98%EC%97%B4_%EB%A7%8C%EB%93%A4%EA%B8%B0.java)
+  - 오큰수  : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%98%A4%ED%81%B0%EC%88%98_%EA%B5%AC%ED%95%98%EA%B8%B0.java)
+
 ## 4 ) 정렬
 
 ### 4 - 1 ) 버블 정렬
