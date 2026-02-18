@@ -44,8 +44,12 @@ public class 신기한_소수_R {
 
     // 소수 체크
     public static boolean isPrime(int num){
-        // 소수는 1보다 무조건 커야함
-        if (num < 2) return false;
+        // 1 이하 정수는 소수 아님
+        if (num <= 1) return false;
+        // 2는 소수
+        if (num == 2) return true;
+        // 짝수는 소수에서 제외 시킴
+        if (num % 2 == 0) return false;
 
         // ✅ 약수가 있는지 확인 하는 로직 소수는 1과 자기 자신만 있어야하는 수이기 때문이다.
         // - 약수는 항상 작은 수 * 큰 수 로 쌍을 이루기에 반환점을 넘으면 어차피 똑같기에 2제곱 값까지만 확인 하면 된다.
@@ -57,7 +61,7 @@ public class 신기한_소수_R {
         // 6 * 6 ✨(변환점)
         // 9 * 6  ❌ <<<<<<<<<<-- 궅이 또 할 필요가 없음
         // ...
-        for(int i=2; i*i<=num; i++){
+        for(int i = 3; i*i<=num; i += 2){
             if(num % i == 0) return false;
         } // for
         return true;
