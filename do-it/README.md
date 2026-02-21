@@ -190,23 +190,22 @@
   - 스택 수열  : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%8A%A4%ED%83%9D%EC%9C%BC%EB%A1%9C_%EC%88%98%EC%97%B4_%EB%A7%8C%EB%93%A4%EA%B8%B0.java)
   - 오큰수  : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%98%A4%ED%81%B0%EC%88%98_%EA%B5%AC%ED%95%98%EA%B8%B0.java)
 
-## 6 ) 버블 정렬
+## 6 ) 버블 정렬 - [참고](https://github.com/edel1212/algorithm/blob/main/src/sort/BubbleSort.java)
 
 - 두 인접한 데이터의 크기를 비교해가며 정렬 **간단하게 구현은 가능**하나 **시간 복잡도가 가장 좋지 못하다.**
 - 시간 복잡도 : O(N²)
 - 정렬된 값들은 **가장 오른쪽에 쌓이는 형식**
 - 최적화를 위해 **왼쪽 swap**이 더 이상 없을 경우 **반복문을 종료**
-- [참고](https://github.com/edel1212/algorithm/blob/main/src/sort/BubbleSort.java)
 
-## 7 ) 선택 정렬
+## 7 ) 선택 정렬 - [참고](https://github.com/edel1212/algorithm/blob/main/src/sort/SelectSort.java)
 
 - 원하는 데이터를 선택하여 가장 왼쪽으로 이동하여 정렬 **방법 구현이 복잡하며 시간 복잡도 또한 좋지 못함.**
   - 가장 크거나 작은 값을 정한 후 **정렬된 대상과 위치를 바꾸**는 방식
   - 값의 `swap`은 버블 정렬처럼 자주 진행할 필요 없이 **기준 값**의 `index`가 **바뀌었을 때만** `swap`진행 
 - 시간 복잡도 : O(N²)
-- [참고](https://github.com/edel1212/algorithm/blob/main/src/sort/SelectSort.java)
 
-## 8 ) 삽입 정렬
+
+## 8 ) 삽입 정렬 - [참고](https://github.com/edel1212/algorithm/blob/main/src/sort/InsertSort.java)
 
 - **이미 정렬된 데이터** 범위에 **지정한 값을 알맞은 위치에 삽입** 시켜 정렬하는 방식 **속도는 느린편이지만 구현하기 쉬움**
   - 지정된 key 값을 삽입할 위치를 찾고 찾은 위치의 오른쪽 요소들을 쉬프트한 후 지정 위치에 삽입 하는 방식
@@ -217,9 +216,8 @@
 - 시간 복잡도 : O(N²)
 - **정렬된 위치에서 이진탐색을 활용**할 경우 조금 더 빠르게 삽입될 위치를 찾을 수 있다.
   - 삽입 정렬은 찾는게 빨라도 쉬프트 하는데 시간이 오래 걸리는 단점이 있음
-- [참고](https://github.com/edel1212/algorithm/blob/main/src/sort/InsertSort.java)
 
-## 9 ) 퀵 정렬
+## 9 ) 퀵 정렬 - [참고](https://github.com/edel1212/algorithm/blob/main/src/sort/QuickSort.java)
 
 - 임의의 위치를 지정 후(피벗) 쪽의 **양쪽 그룹을 나눠가며 정렬** 진행
   - **재귀를 사용하여 구현**
@@ -236,9 +234,7 @@
   - 3 ) 두개로 나눠진 그룹을 **재귀롤 틍해 1 ~ 2 과정을 반복**
 - 시간 복잡도 : 빠르면 O(nlogn) ~ 최악의 경우는 O(N²)이다.
 
-- [참고](https://github.com/edel1212/algorithm/blob/main/src/sort/QuickSort.java)
-
-## 10 ) 병합 정렬
+## 10 ) 병합 정렬 - [참고](https://github.com/edel1212/algorithm/blob/main/src/sort/MergeSort.java)
 
 - 배열의 데이터 분할 후 분할된 **집합을 합치며** 정렬
   - **가장 작은 수준**의 그룹까지 **나눈 후 병합**하며 정렬
@@ -259,16 +255,14 @@
     - 3 - 5 ) 실제 배열에 임시 배열 값을 저장함
       - `arr[left + t] = tmp[t];`
 - 시간 복잡도 : O(nlogn)
-- [병합 정렬 - 참고](https://github.com/edel1212/algorithm/blob/main/src/sort/MergeSort.java)
 
-### ✨ **응용 문제로 "버블 정렬의 swap 횟수 계산"**이 있음
+
+### ✨ 응용 문제로 - [버블 정렬의 swap 횟수 계산 - 참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EB%B2%84%EB%B8%94%EC%86%8C%ED%8A%B8.java)
   - 그룹을 나눈 후 뒤에 있는 그룹의 포인터가 **앞에 있는 그룹**의 몇개의 개수를 **제외 하는지**에 맞춰 swap 횟수를 알 수 있다.
   - 병합 시 **두 그룹을 비교**할 때 해당 값을 **카운팅 가능**하다.
     - `count += (mid - i + 1);` - count++가 아닌 이유는 **right 그룹 앞의 모든 개수**를 **같이 카운트** 하기 위함
-- [응용 문제-참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EB%B2%84%EB%B8%94%EC%86%8C%ED%8A%B8.java)
 
-
-### 11 ) 기수 정렬
+## 11 ) 기수 정렬
 
 - 값을 비교하지 않고, 비교할 자릿수를 정한다음 해당 **자릿수만 비교하여 정렬을 진행** 하는 알고라즘
 - 가수 정렬은 **10개의 Queue를 이용**하여 구현
@@ -276,28 +270,95 @@
     - 0에는 한 자릿수 및 10, 20 ... 의 형태의 수가 들어감
 - 시간 복잡도 : O(n)
 
-## 5 ) 탐색
+## 12 ) 깊이 우선 탐색 (DFS)
 
-### 5 - 1 ) 깊이 우선 탐색 (DFS)
-
-- 그래프 완전 탐색 기법중 하나
-- 지정 노드에서 출발하여 탐색할 **한쪽 분기를 정하여 최대 깊이 까지 탐색**을 마친 후 **다시 다른 쪽 분기로 이동하여 탐색**을 수행
-- **재귀 함수**를 이용하므로 **스택오버 플로우에 주의**
-  - 스택을 사용해서도 구현 가능함 (재귀가 스택 형식으로 동작함)
-- 그래프 탐색의 핵심 이론은 한번 **방문한 노드를 다시 방문 하면 안되기**에 배열을 활용하여 **방문 여부를 체크**
-  - ✅ 모든 경로를 탐색 할 경우 백트래킹 필요
+- 그래프 **완전 탐색 기법**중 하나
+- 지정 노드에서 출발 **한쪽 분기를 최대 깊이 까지 탐색** 한다.
+  - 구현에 따라 **다시 다른 쪽 분기로 이동하여 탐색**을 수행하게 할 수 있음
+- **재귀 함수** 통해 구현 **(오버 플로우 주의)**
+  - 스택을 사용해서도 구현 가능
+- 그래프 탐색의 핵심 이론
+  - **방문한 노드를 재방문 하지 않기에** 방문여부 체크가 필요
+  - ✅ **모든 경로를 탐색** 할 경우 **백트래킹** 필요
 - 시간 복잡도
-  - 그래프 탐색 DFS : `O(E + V)`
+  - 그래프 탐색 DFS : `O(E + V)` 
   - 모든 경로 탐색(백트래킹) : `O(2^n)`
+### **기본 구조**
+```java
+public class Main{
+  public static void dfs(int node) {
+    // 들어오자마자 체크
+    visited[node] = true; 
+    // 연결된 노드 확인
+    for (int next : graph[node]) {
+      if (!visited[next]) {
+        // recursive
+        dfs(next);
+      } // if
+    } // for
+  } 
+  // __EOF__
+}
+```
+
+- 참고 문제
+  - 연결 요소의 개수  : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%97%B0%EA%B2%B0_%EC%9A%94%EC%86%8C_%EA%B0%9C%EC%88%98_R.java)
+  - 신기한 소수  : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%8B%A0%EA%B8%B0%ED%95%9C_%EC%86%8C%EC%88%98.java)
 
 ### 5 - 2 ) 백트래킹
+- 핵심 개념: 
+  - **DFS(깊이 우선 탐색)를** 기반으로 하되, **조건에 맞지 않는 경로(불필요한 경로)를 조기에 차단(Pruning)하여** 효율성을 높인 알고리즘
+  - **모든 경로 탐색** 시 사용
+- 선택한 경로가 유효하지 않거나 조건에 만족하지 못할 경우 **이전 단계로 되돌아가 다른 경로를 시도**하는 알고리즘
+  - 상태를 원래대로 돌려놓는 **원상복구(Undo) 작업이 필수**
+  - `visited`의 값을 바꿔주며 탐색
+- 백트래킹의 방법은 `visited[]`을 사용하는 방법 뿐만아니라 위치 배열을 Over write 하는 방식 또한 있음 
+  - `N-Queen` 문제 참고 
+- 시간 복잡도 :
+  - 문제에 따라 다르나 보통 `O(N!)` 또는 `O(2^N)` 등의 지수 시간을 가짐 **가지치기를 얼마나 잘하느냐가 성능을 좌우함**
 
-- 문제를 해결하는 탐색 기법 **(문제를 해결 할 수 있는 모든 경로 탐색)**
-- **모든 경로를 탐색**하면서 선택한 경로가 유효하지 않거나 조건에 만족하지 못할 경우 **이전 단계로 되돌아가 다른 경로를 시도**하는 알고리즘
-- DFS 개념과 매우 유사함 (비슷한 개념으로 봐도 괜찮다.)
-- 핵심 이론 : 조건을 만족하지 않는 경로를 **가지치기하여 탐색 범위를 줄이는 것**이 핵심
-- 시간 복잡도 : `O(2^d)`
-  - `d` : 탐색 깊이
+### **기본 구조**
+> 방문 및 방문 해제 처리는 **dfs 메서드 본인이 Controller 할 수 있는 구조로 구현**하는 편이 좋다.  
+> `for(int next : graph[node])` 내에서 처리할 경우 부모에서 또한 초기 확인 작업이 들어가 **관리가 포인트가 늘어나는 단점**이 있음
+```java
+public class Main{
+    static boolean success = false;
+    static final int GOAL_DEPTH = 5;
+
+  private static void dfs(int node, int depth) {
+    // 1. [가지치기 & 기저 조건]
+    // - 정답을 찾았거나(성공), 더 이상 가봤자 가망이 없으면(실패) 종료
+    if (depth == GOAL_DEPTH) {
+      success = true;
+      return;
+    } // if
+
+    // 2. [방문 처리] (State Check)
+    visited[node] = true;
+
+    // 3. [재귀 호출] (Next Step)
+    for (int next : graph[node]) {
+      // 방문 여부 체크
+      if (!visited[next]) {
+        dfs(next, depth + 1);
+
+        // [조기 종료] 정답을 찾았다면 불필요한 탐색 중단
+        if (success) return;
+      } // if
+    } // for
+
+    // 4. [원상 복구] (Backtracking)
+    // - 다른 경로에서 해동 노드에 다시 방문 할 수 있도록 처리
+    visited[node] = false;
+  }
+  // __EOF__
+}
+```
+
+- 참고 문제
+  - ABCDE : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/ABCDE_R.java)
+  - N-Queen : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/N_Queen_R.java)
+  - 색종이 붙이기 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%83%89%EC%A2%85%EC%9D%B4_%EB%B6%99%EC%9D%B4%EA%B8%B0_R2.java)
 
 ### 5 - 3 ) 너비 우선 탐색 (BFS)
 
@@ -331,8 +392,8 @@
 
 ### 7 - 1 ) 소수
 
-- 1과 자기 자신을 갖는 수를 의미한다.
-  - 그외의 수는 합성수라 부른다.
+- **1보다 큰 자연수** 중 **1과 자기 자신**으로만 이루워진 자연수
+  - 그외 수는 합성수라 부라한다.
 - **에라토스테네스의 체 원리**를 사용해서 구하는 것이 일반적이다.
   - 시간 복잡도 : `O(N log(log N))`
   - 원리
@@ -347,6 +408,47 @@
   - #### 쉽게 설명
     - "소수는 남기고, 그 배수는 다 버린다"
     - 1은 소수가 아니므로 제외, 2는 소수이므로 2의 배수를 배열에서 삭제 -> 3은 소수이므로 3의 배수 삭제 ... (반복) = **배열에는 소수만 남음**
+
+### 소수 확인 매서드
+- `i`가 3부터 시작인 이유? : 소수는 1보다 큰 자연 수이며, 상단 조건식에서 **짝수를 제외**하였기 떄문
+- `i*i<=num` 로 범위 이유 ? 변환점을 넘는 범위까지 계산은 **불필요한 계산** 이기에
+- `i += 2` 로 증감 이유 ? 홀수만 찝어서 검사 하기 위함
+```java
+public class Main{
+  public static boolean isPrime(int num){
+    // 1. 기본 처리: 1 이하 정수는 소수 아님
+    if (num <= 1) return false;
+
+    // 2. 2는 유일한 짝수 소수
+    if (num == 2) return true;
+
+    // 3. 짝수 컷 (2를 제외한 모든 짝수는 소수가 아님)
+    if (num % 2 == 0) return false;
+
+    // ✅ 약수 확인 로직 (소수는 1과 자기 자신만 약수여야 함)
+    // - 약수는 항상 [작은 수 * 큰 수]로 쌍(Pair)을 이룹니다.
+    // - 따라서 '반환점(제곱근)'까지만 검사하면, 그 뒤는 검사할 필요가 없습니다.
+    // - i는 3부터 시작: 위에서 짝수를 다 제외했으므로 홀수만 확인합니다.
+
+    // [예시: num = 36일 때]
+    // 1 * 36
+    // 2 * 18
+    // 3 * 12
+    // 4 * 9
+    // 6 * 6  ✨(반환점: i * i <= num)
+    // ---------------------------------
+    // 9 * 4  ❌ (이미 4 * 9에서 검사함! 중복!)
+    // 12 * 3 ❌ (이미 3 * 12에서 검사함!)
+
+    // i += 2 : 짝수는 이미 없으므로 홀수(3, 5, 7...)만 검사해서 속도 2배 향상!
+    for (int i = 3; i * i <= num; i += 2) {
+      if (num % i == 0) return false;
+    } // for
+    
+    return true;
+  }
+} 
+```
 
 ### 7 - 2 ) 오일러의 피
 
