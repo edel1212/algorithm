@@ -305,7 +305,7 @@ public class Main{
   - 연결 요소의 개수  : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%97%B0%EA%B2%B0_%EC%9A%94%EC%86%8C_%EA%B0%9C%EC%88%98_R.java)
   - 신기한 소수  : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%8B%A0%EA%B8%B0%ED%95%9C_%EC%86%8C%EC%88%98.java)
 
-### 5 - 2 ) 백트래킹
+## 13 ) 백트래킹
 - 핵심 개념: 
   - **DFS(깊이 우선 탐색)를** 기반으로 하되, **조건에 맞지 않는 경로(불필요한 경로)를 조기에 차단(Pruning)하여** 효율성을 높인 알고리즘
   - **모든 경로 탐색** 시 사용
@@ -360,13 +360,111 @@ public class Main{
   - N-Queen : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/N_Queen_R.java)
   - 색종이 붙이기 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%83%89%EC%A2%85%EC%9D%B4_%EB%B6%99%EC%9D%B4%EA%B8%B0_R2.java)
 
-### 5 - 3 ) 너비 우선 탐색 (BFS)
+## 14 ) 너비 우선 탐색 (BFS)
 
 - 그래프 완전 탐색 기법중 하나
-- 탐색 시작노드와 **가까운 노드를 우선하여 탐색**
-- 큐를 이용하여 구현
+- 탐색 시작노드와 **가까운 노드를 우선하여 탐색** (물결이 퍼져나가듯 탐색)
+- **큐(Queue)를** 이용하여 쓰고, 먼저 넣은 걸 먼저 뺀는 탐색의 근본은 로직을 사용 (Java에서는 `ArrayDeque` 사용 권장)
+  - ✍️ 2D 미로 (**방향 배열 사용**):
+    - 전달 받은 위치 값에 **상하좌우를 반복문을 통해 탐색**하는 구조
+  - ✍️ 그래프 (인접 리스트 사용):
+    - 그래프에 **연결된 다음 노드를 기준으로 반복문을 통해 탐색** 하는 구조
 - 도착하는 경로가 여러 개일 때 **최단 경로를 보장**함
+  - 단, 모든 간선의 **가중치(이동 비용)가 동일**할 때만 성립한다.
 - 시간 복잡도 : `O(V + E)`
+### **기본 구조**
+> 트리구조 데이터가 아니여도 BFS를 사용할 수 있다. 아래의 예시의 경우 상하좌우 값을 이용하여 BFS 진행
+```java
+public class Main{
+  static final int N = 4;
+  static final int M = 5;
+  // 상하좌우 방향 벡터 배열 (상, 하, 좌, 우)
+  static int[] dx = {-1, 1, 0, 0};
+  static int[] dy = {0, 0, -1, 1};
+
+  // 전체 맵 데이터 (1-based index 가정)
+  static int[][] MAP = new int[N + 1][M + 1];
+
+  /**
+   * 2D 지도상 최단 거리 찾기
+   * 
+   * @param x the position x
+   * @param y the position y
+   */
+  private static void bfs_2D(int x, int y){
+    // 방문 배열 선언
+    boolean[][] visited = new boolean[N+1][M + 1];
+    // 큐 선언
+    Queue<int[]> queue = new ArrayDeque<>();
+    // 초기 인자값 주입
+    visited[x][y] = true;
+    queue.offer(new int[]{x, y});
+
+    // 큐를 사용하여 넓이 탐색 시작
+    while(!queue.isEmpty()){
+      // 저장된 xy 값을 가져옴
+      int[] xyArr = queue.poll();
+      // 상하좌우 4방향 탐색
+      for(int i = 0 ; i < 4 ; i++){
+        // 현재 입력 받은 좌표에 상하좌우 값을 더 해봄
+        int nx = xyArr[0] + dx[i];
+        int ny = xyArr[1] + dy[i];
+
+        // 지도 범위 내에 포함 되는지 확인
+        if(nx > 0 && nx <= N && ny > 0 && ny <= M ){
+          // 방문한적이 없고 0이 아닐 경우
+          if( !visited[nx][ny] && MAP[nx][ny] != 0 ){
+            // 다녀온 흔적 표시
+            MAP[nx][ny] = MAP[xyArr[0]][xyArr[1]] + 1;
+            // 방문 도장
+            visited[nx][ny] = true;
+            // 큐에 저장
+            queue.offer(new int[]{nx, ny});
+          } // if
+        } // if
+      } // for
+    }// while
+  }
+
+  /**
+   * graph 기반 넓이 탐색
+   * 
+   * @param node the node number
+   */
+  static List<List<Integer>> graph;
+  private static void bfs_graph(int node){
+    // 방문 배열 선언
+    boolean[] visited = new boolean[N];
+    // 큐 선언
+    Queue<Integer> queue = new ArrayDeque<>();
+    // 초기 인자값 주입
+    visited[node] = true;
+    queue.offer(node);
+
+    // 큐를 사용하여 넓이 탐색 시작
+    while(!queue.isEmpty()){
+      // 지정된 노드 값을 가져옴
+      int current = queue.poll();
+      // 상하좌우 4방향 탐색
+      for(int next : graph.get(current)) {
+          // 방문 여부 확인
+          if(!visited[next]){
+            // 방문 처리
+            visited[next] = true;
+            // 다음 연결된 노드 queue 추가
+            queue.offer(next);
+          }// if
+      }// for
+    }// while
+  }
+  
+  // __EOF__
+}
+```
+
+- 참고 문제
+  - 미로 탐색 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EB%AF%B8%EB%A1%9C_%ED%83%90%EC%83%89_R.java)
+  - 트리의 지름 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%ED%8A%B8%EB%A6%AC%EC%9D%98_%EC%A7%80%EB%A6%84_R.java)
 
 ### 5 - 4 ) 이진 탐색
 
