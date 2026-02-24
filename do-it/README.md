@@ -466,15 +466,34 @@ public class Main{
   - 미로 탐색 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EB%AF%B8%EB%A1%9C_%ED%83%90%EC%83%89_R.java)
   - 트리의 지름 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%ED%8A%B8%EB%A6%AC%EC%9D%98_%EC%A7%80%EB%A6%84_R.java)
 
-### 5 - 4 ) 이진 탐색
+## 15 ) 이진 탐색
 
-- 데이터가 **정렬** 되어 있는 상태에서 원한는 값을 찾아내는 알고리즘이다.
-- 찾고자 하는 값을 절반씩 줄여가며 대상을 찾는다.
-  - **정렬 데이터에서** 원하는 값을 탐색할 때 **가장 일반적인 알고르즘**
+- 문제 조건에 따라 **정렬** 되어 있는 상태에서 진행이 가능하다.
+- 대상의 위치 값을 **절반씩 줄여가며 대상을 찾는** 알고리즘
   - 코테에서 **부분 문제**로 **많이 활용**
+- 중요 포인트:
+  - **확인한 mid 값**은 포함하지 말고 **꼭 제외**하고 start 나 end 포인터에 주입하자
+    - 찾는 값이 더 **클 때**: mid보다 오른쪽에 있으니 - `start = mid + 1`
+    - 찾는 값이 더 **작을 때**: mid보다 왼쪽에 있으니 - `end = mid - 1`
+  - start 와 end가 **교차 하면서 탐색 종료**
+    - 이진 탐색에서 **범위를 좁히다 보면 결국 start와 end가 한 곳에서 만나게 되며**, 그곳이 제외하게 되면 값을 찾을 수 없게 된다.
+    - `while (start <= end)`
+- ***이진 탐색 구분***
+  - **일반 이진 탐색** (Binary Search)
+    - 목적 : **배열 안**에서 `X`를 찾음
+    - 탐색 대상 : **주어진 배열**의 인덱스
+    - 정렬 여부 : 배열이 **반드시 정렬**되어 있어야 함
+  - **매개 변수 탐색** (Parametric Search)
+    - 목적 : 정답을 `A`라고 쳤을 때, 조건에 맞는지에 따라 값을 찾음
+    - 탐색 대사 : 내가 찾고자 하는 정답의 **값 자체**
+    - 정렬 여부 : X
 - 시간 복잡도 : `O(logN)`
+- 참고 문제
+  - 수 찾기 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%88%98_%EC%B0%BE%EA%B8%B0_R.java)
+  - 기타 레슨 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EA%B8%B0%ED%83%80_%EB%A0%88%EC%8A%A8_R4.java)
+  - K 번째 수 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/K%EB%B2%88%EC%A7%B8_%EC%88%98_%EC%9D%B4%EC%A7%84_R4.java)
 
-## 6 ) 그리디 알고리즘 (탐욕법)
+## 16 ) 그리디 알고리즘 (탐욕법)
 
 - 현재 보는 선택지 중 최선의 선택지 전채 선택지 중 **최선이라 가정하는 알고르즘**
   - 최적의 해를 보장하지 않는다
