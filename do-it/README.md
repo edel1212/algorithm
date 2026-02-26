@@ -508,11 +508,11 @@ public class Main{
   - 3 . 해 검사 : 현재까지 선택된 해 집합 문제를 해결할 수 있는지 확인
     - 해결하지 못하면 다시 1번으로 복귀
 - 참고 문제
-  - 동전 0 : [참고]()
-  - 카드 정렬하기 : [참고]()
-  - 수 묶기 : [참고]()
-  - 회의실 배정 : [참고]()
-  - 잃어버린 괄호 : [참고]()
+  - 동전 0 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EB%8F%99%EC%A0%840_R.java)
+  - 카드 정렬하기 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%B9%B4%EB%93%9C_%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0_R.java)
+  - 수 묶기 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%88%98_%EB%AC%B6%EA%B8%B0_R2.java)
+  - 회의실 배정 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%ED%9D%AC%EC%9D%98%EC%8B%A4_%EB%B0%B0%EC%A0%95_R.java)
+  - 잃어버린 괄호 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%9E%83%EC%96%B4%EB%B2%84%EB%A6%B0_%EA%B4%84%ED%98%B8_R.java)
 
 ## 17 ) 소수
 
@@ -561,11 +561,6 @@ public class Main{
   }
 }
 ```
-- 참고 문제
-  - 소수 구하기 : [참고]()
-  - 거의 소수 : [참고]()
-
-
 ### 단일 수 소수 체크 메서드
 - `i`가 3부터 시작인 이유? : 소수는 1보다 큰 자연 수이며, 상단 조건식에서 **짝수를 제외**하였기 떄문
 - `i*i<=num` 로 범위 이유 ? 변환점을 넘는 범위까지 계산은 **불필요한 계산** 이기에
@@ -607,6 +602,11 @@ public class Main{
   }
 } 
 ```
+
+- 참고 문제
+  - 소수 구하기 : [참고]()
+  - 거의 소수 : [참고]()
+
 
 ### 7 - 2 ) 오일러의 피
 
