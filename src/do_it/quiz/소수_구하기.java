@@ -25,7 +25,8 @@ public class 소수_구하기 {
         } // for
 
         // 제곱근까지만 시행
-        for(int i = 2 ; i <= Math.sqrt(E); i++){
+        int limit = (int) Math.sqrt(E);
+        for(int i = 2 ; i <= limit; i++){
 
             // 0일 경우 skip (제거된 값을 0으로 바꿔 놓기 때문임)
             if(A[i] == 0){
@@ -33,7 +34,7 @@ public class 소수_구하기 {
             } // if
 
             // i * i 부터 E 까지 한번 실행때마다 배수를 더함 (배수를 지움)
-            for(int j = i + i; j <= E; j += i){
+            for(int j = i * i; j <= E; j += i){
                 A[j] = 0;
             }// for
 
