@@ -4,7 +4,8 @@ import java.io.*;
 import java.util.Arrays;
 
 public class 소수_팰린드롬 {
-    static final int LIMIT = 1_000_000;
+    // ☠️ 1,000,000으로 제한을 잡으면 오답이다. (반례 : N - 1,000,000)
+    static final int LIMIT = 2_000_000;
     public static void main(String[] args)   throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

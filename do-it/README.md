@@ -518,7 +518,7 @@ public class Main{
 
 - **0과 1을 제외**한 **1과 자기 자신**으로만 이루워진 자연수
   - 그 외 수는 합성수다
-- **에라토스테네스의 체 원리**를 사용하여 **범위 내 소수**를 찾는것이 일반적
+- **에라토스테네스의 체**를 사용하여 **범위 내 소수**를 찾는것이 일반적이다.
   - 시간 복잡도 : `O(N log(log N))`
   - **원리**
     - 찾고자 하는 수의 범위 배열 생성
@@ -604,9 +604,9 @@ public class Main{
 ```
 
 - 참고 문제
-  - 소수 구하기 : [참고]()
-  - 거의 소수 : [참고]()
-
+  - 소수 구하기 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%86%8C%EC%88%98_%EA%B5%AC%ED%95%98%EA%B8%B0.java)
+  - 거의 소수 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EA%B1%B0%EC%9D%98_%EC%86%8C%EC%88%98_R.java)
+  - 소수&팰린드롬 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%86%8C%EC%88%98_%ED%8C%B0%EB%A6%B0%EB%93%9C%EB%A1%AC_R.java)
 
 ### 7 - 2 ) 오일러의 피
 
