@@ -14,15 +14,13 @@ public class GCD_R {
         // 초기 1부터 N까지 모든 수가 후보이므로 N으로 초기화 (1 ≤ k ≤ n)
         long result = N;
 
-        int limit = (int) Math.sqrt(N);
+        // N의 값이 동적으로 줄어듬으로 제곱근을 변수로 많들지 않고 사용
+        for (long k = 2; k * k <= N; k++) {
 
-        // 제곱근 까지만 확인 (최적화)
-        for (long k = 2; k <= limit; k++) {
-
-            // i가 N의 약수(소인수)인지 확인
+            // k가 N의 약수(소인수)인지 확인
             if(N % k == 0){
 
-                // 현재 후보(result)에서 i의 배수들을 제거함
+                // 현재 후보(result)에서 K의 배수들을 제거함
                 result = (result - result / k);
 
                 // N에서 방금 찾은 소인수(k)의 성분을 뿌리 뽑을 때까지 계속 나눔
