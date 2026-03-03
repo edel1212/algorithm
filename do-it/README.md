@@ -631,13 +631,14 @@ public class Main{
 - 원리
   - 1 . 입력 받은 A, B에서 `A % B = R (나머지)` 를 구한다.
   - 2 . 재귀를 통해 `B % R 을` 계산한다. (A는 버리고, B와 R이 왼쪽으로 이동)
+    - ✨ **b의 위치를 바꿔서** 재귀 함수를 호출하는 것이 포인트
   - 3 . 나머지가 0이 될 때까지 이 자리 이동을 반복하며, 0이 나왔을 때의 **나누는 수(B 위치의 값)**가 최대공약수이다.
 ```java
 public class Main{
   public static int gcd(int a, int b) {
     // 나머지가 0이 되면 그때의 a가 **최대 공약수** 이다.
     if (b == 0) return a;
-    // 재귀롤 통헤 자리 바꿔서 다시 나머지 구하기
+    // 재귀롤 통헤 **자리 바꿔서** 다시 나머지 구하기
     return gcd(b, a % b); 
   }
 }
@@ -645,7 +646,7 @@ public class Main{
 - ✨ **유클리드 호재법을 통해 최소 공배수를 구하는 방법** : `입력값1 * 입력값2 / 최대 공약수`
 
 - 참고 문제
-  - ?? : [참고]()
+  - 최소 공배으 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98_R.java)
 
 ## 8 ) 그래프
 
