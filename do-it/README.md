@@ -628,6 +628,7 @@ public class Main{
 - **정의**: 두 숫자의 **최대공약수(GCD)** 를 쉽게 구할 수 있는 알고리즘
 - **핵심**: 이전 단계의 B와 나머지를 왼쪽으로 한 칸씩 **이동(Shift)** 시켜 **다시 % 연산**을 하는 방식.
   - 재귀(recursive)를 사용하여 구현. 
+- 두개의 수가 같은 수(ex - "111111")를 반복 할 경우 **유클리드 호제법**을 사용하여, 최대 공약수 를 구할 수 있다. 
 - 원리
   - 1 . 입력 받은 A, B에서 `A % B = R (나머지)` 를 구한다.
   - 2 . 재귀를 통해 `B % R 을` 계산한다. (A는 버리고, B와 R이 왼쪽으로 이동)
@@ -646,7 +647,8 @@ public class Main{
 - ✨ **유클리드 호재법을 통해 최소 공배수를 구하는 방법** : `입력값1 * 입력값2 / 최대 공약수`
 
 - 참고 문제
-  - 최소 공배으 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98_R.java)
+  - 최소 공배수 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98_R.java)
+  - 최대 공약수 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/%EC%B5%9C%EB%8C%80_%EA%B3%B5%EC%95%BD%EC%88%98_%EA%B5%AC%ED%95%98%EA%B8%B0.java)
 
 ## 8 ) 그래프
 
