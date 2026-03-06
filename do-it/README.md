@@ -655,22 +655,49 @@ public class Main{
 ### 에지 리스트 (Edge List)
 
 ![img_2.png](img_2.png)
-
+> Class를 통한 구현 방법을 더 많이 사용하고 구현 및 가독성이 높다.
 - **정의**: 노드 중심이 아닌, **간선(선) 중심**으로 그래프를 표현한 리스트
-- **구현 방법**: 2차원 배열(`int[][]`) 혹은 클래스(`Class`) 객체 배열로 표현
-- **2차원 배열 표현 방식**:
-  - 가중치가 없는 경우: `A[E][2]` 구조 (E = 간선의 총 개수)
-    - `[i][0]`: 시작 노드
-    - `[i][1]`: 도착 노드
-  - 가중치가 있는 경우: 열을 3개로 늘려 A[E][3] 구조로 저장 (시작, 도착, 가중치)
-  - 방향성 처리 (중요!): 
+- **구현 방법**: 2차원 배열(`int[][]`) 혹은 클래스(`Class`) 객체 배열로 표현 
+- **Class 배열 표현 방식**:
+  - 더욱 직관적이며, 구현 또한 편리하다.
+  - Class 내 `startNode, endNode, weight` 변수를 할당하여 사용
+  - `List<Edge> graph = new ArraysList<>();` 구조로 사용
+  - 방향이 있을 경우 :
     - 방향 그래프: 주어진 입력대로 **1번만 저장**
-    - 무방향 그래프(양방향): 길 찾기(벨만-포드 등)를 할 때는 [1, 2], [2, 1] 처럼 출발/도착을 뒤집어서 2번 저장해야 왕복 가능! (단, 크루스칼 알고리즘에서는 1번만 저장해도 무방함)
-        - 무방향('양방향') 경우 : 2번 저장하는게 더 편할 경우가 많음 [1,2], [2,1] 과 같이 2번 저장
-        - 가중치가 있을 경우 에지 리스트
-            - 열을 3개로 늘려 **S(시작 노드),E(끝 노드) ,V(가중치) 형태**로 저장 함 `A[N][3]`
-            - ✅ 단! 특정 노드에 관련된 엣지를 탐색하는건 쉽지 않음
--  **주요 사용 알고르즘** : 벨만포크, 크루스탈(MST)
+    - 무방향 그래프(양방향): 간선의 길이 값을 2배로 하여 2번 저장하는 방식 사용
+-  **주요 사용 알고리즘** : 벨만포크, 크루스탈(MST)
+
+```java
+class Main{
+    public static void main(String[] args){
+      List<Edge> edgeList = new ArrayList<>();
+
+      // 간산 : 1번 노드 ↔ 2번 노드 :: 가중치 5 (무방향)
+      edgeList.add(new Edge(1, 2, 5)); 
+      edgeList.add(new Edge(2, 1, 5)); 
+    }
+    
+    // 간선 class
+    class Edge implements Comparable<Edge> {
+        int start;
+        int end;
+        int weight;
+
+      // 생성자 (데이터를 넣을 때 사용)
+      public Edge(int start, int end, int weight) {
+        this.start = start;
+        this.end = end;
+        this.weight = weight;
+      }
+  
+      @Override
+      public int compareTo(Edge o) {
+        return Integer.compare(this.weight, o.weight);
+      }
+  }
+}
+```
+
 
 #### 인접 행렬
 
