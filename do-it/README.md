@@ -465,6 +465,10 @@ public class Main{
 - 참고 문제
   - 미로 탐색 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EB%AF%B8%EB%A1%9C_%ED%83%90%EC%83%89_R.java)
   - 트리의 지름 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%ED%8A%B8%EB%A6%AC%EC%9D%98_%EC%A7%80%EB%A6%84_R.java)
+  - 특정 거리의 도시 찾기 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%ED%8A%B9%EC%A0%95_%EA%B1%B0%EB%A6%AC%EC%9D%98_%EB%8F%84%EC%8B%9C_%EC%B0%BE%EA%B8%B0_R.java)
+  - 효육적인 해킹 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8_%ED%95%B4%ED%82%B9_R2.java)
+  - 이분 그래프 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%9D%B4%EB%B6%84_%EA%B7%B8%EB%9E%98%ED%94%84_R.java)
+  - 물통 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EB%AC%BC%ED%86%B5_R2.java)
 
 ## 15 ) 이진 탐색
 
