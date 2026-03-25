@@ -775,7 +775,6 @@ class Main{
   - `MST`
 
 
-
 ## 20 ) 유니온 파인드 (Union-Find)
 ### 핵심 목적
 > 1. 그래프의 **싸이클(순환) 유/무 판단**
@@ -861,6 +860,7 @@ class Main{
 
 - 참고 문제
   - 줄 세우기 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%A4%84_%EC%84%B8%EC%9A%B0%EA%B8%B0_R.java)
+  - 게임 개발 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EA%B0%9C%EC%9E%84%EA%B0%9C%EB%B0%9C_R.java)
 
 ### 8 - 5 ) 다익스트라
 
