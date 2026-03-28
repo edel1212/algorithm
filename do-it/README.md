@@ -871,21 +871,23 @@ class Main{
 - ✅ 중요 특징 : **엣지에 할당된 가중치**는 **모두 양수**여야 한다.
 - 시간 복잡도 : `O(ElogV)`
 ### **Flow**
-- `List<List<Node>>`형태의 그래프에 방향 데이터를 저장.
+- `List<List<Node>>`형태의 그래프에 가중치가 포함된 구조로 저장.
 - **최단 거리**를 저장할 배열 생성 
   - 배열의 값은 `Ingeger.MAX_VALUE`로 저장
-  - **출발 노드의 값만** `0`으로 초기화
-- 3 . 최단 거리를 저장한 배열에서 **value가 가장 작은 노드를 선택**
-- 4 . "3"에서 선택된 노드를 "1"에서 생성한 그래프에서 인접한 데이터를 찾은 후 **가중치 값을 사용 다른 노드의 value를 업데이트**
-  - 최단 거리에서 선택된 노드의 값이 1 일 경우 `graph.get(1)` -> Node 의 값을 받아옴
-  - Node의 값이 `targetIndex : 2`, `weight : 8` 이라면 해당 2번 타겟 노드의 최단거리 배열 값 업데이트
-    - 최단거리 배열[2] = Math.min( 선택 노드의 최단 거리 value + Node.weigh , 연결 노드의 최단 거리 value )
-      - ex) `D[2] = Math.min( D[1] + Node.weigh , D[2] )`
-- 5 . **방문 처리 배열을 사용**하여, "3" ~ "4" 모든 노드가 처리될 때까지 과정을 반복
-  - 실제 완성된 출발 거리 배열은 출발 ~ 도착 까지의 정보만 저장한다 생각 하지만 실제로는 **출발 노드와 이외 모든 노드 간의 최단 거리를 가지고 있음**
+  - **출발 노드의 값**은 `0`으로 초기화
+- `PriorityQueue`를 사용하여 최단 거리가 `0`인 대상을 추가함
+  - 최단거리를 알기 위함이므로 값에 의해 정렬되어 저장되는 큐 자료구조가 필요
+- `PriorityQueue`를 순회 함
+  - 1 . 현재 대상의 **가중치와 최단 거리의 값을 비교**하여 이미 최단거리에 저장된 값이 더 클 경우 **skip함**
+  - 2 . 내부 반복문을 통해 다음 노드를 가져옴
+  - 3 . 다음 노드의 가중치와 현재 노드의 가중치를 더한 후 최단 거리와 비교하여 더한 값이 최단 거리보다 작을 경우 `PriorityQueue` 추가
+  - 4 . 최단 거리 배열 값 또한 업데이트
+    - 최단거리 배열[T] = Math.min( current weight + next weight , 최단거리 배열[T] )
+    - ex) `D[2] = Math.min( D[1] + Node.weigh , D[2] )
 
 - 참고 문제
     - 최단경로 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C_R2.java)
+    - 최소비용 구하기 : [참고](https://github.com/edel1212/algorithm/blob/main/src/do_it/quiz/revange/%EC%B5%9C%EC%86%8C%EB%B9%84%EC%9A%A9_%EA%B5%AC%ED%95%98%EA%B8%B0_R2.java)
     
 
 ### 8 - 6 ) 벨만-포드
